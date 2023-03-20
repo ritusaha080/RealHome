@@ -4,17 +4,22 @@
     <!-- hero section start  -->
     <section class="hero-area">
         <div class="hero-wrapper">
+
+
+            @foreach ( $properties as $property )
+                
             <div>
-                <div class="single-hero" style="background-image: url({{ asset('frontend') }}/images/hero/hero01.jpeg);">
+                <div class="single-hero" style="background-image: url({{ asset('storage/post-image/' . $property->image) }});">
                     <div class="hero-content">
-                        <h2>120 Anastasia Avenue, Coral Gables</h2>
+                        <h2>1{{ $property->title }}</h2>
                         <div class="info">
-                            <h4>$625,000</h4>
+                            <h4>{{ $property->price}}</h4>
                             <a href="#" class="theme-btn hero-btn">MORE INFO</a>
                         </div>
                     </div>
                 </div>
             </div>
+            @endforeach
             <div>
                 <div class="single-hero" style="background-image: url({{ asset('frontend') }}/images/hero/hero01.jpeg);">
                     <div class="hero-content">
@@ -116,6 +121,7 @@
                             <a href="#">
                                 <img src="{{ asset('storage/post-image/' . $property->image) }}" alt=""
                                     style="width:100% ;">
+                                    
                             </a>
                          
                         </div>
@@ -195,7 +201,7 @@
     </section>
     <!-- more about section end  -->
 
-    <!-- testimoni section start  -->
+    <!-- testimonial section start  -->
     <section class="testimoni-area">
         <div class="testimoni-wrapper">
             <div>
@@ -236,27 +242,22 @@
                 <div class="col-3">
                     <img src="{{ asset('frontend') }}/images/partner/00.png" alt="">
                 </div>
+                
                 <div class="col-9">
+                    
                     <div class="brand-active">
+                        @foreach($partners as $partner)
                         <div class="brand-img">
-                            <img src="{{ asset('frontend') }}/images/partner/01.png" alt="">
+                            <img src="{{ asset('storage/post-image/' . $partner->logo) }}" alt=""
+                            style="height:100px;width:auto;">
                         </div>
-                        <div class="brand-img">
+                        @endforeach
+                        {{-- <div class="brand-img">
                             <img src="{{ asset('frontend') }}/images/partner/02.png" alt="">
-                        </div>
-                        <div class="brand-img">
-                            <img src="{{ asset('frontend') }}/images/partner/03.png" alt="">
-                        </div>
-                        <div class="brand-img">
-                            <img src="{{ asset('frontend') }}/images/partner/04.png" alt="">
-                        </div>
-                        <div class="brand-img">
-                            <img src="{{ asset('frontend') }}/images/partner/01.png" alt="">
-                        </div>
-                        <div class="brand-img">
-                            <img src="{{ asset('frontend') }}/images/partner/02.png" alt="">
-                        </div>
+                        </div> --}}
+                        
                     </div>
+                   
                 </div>
             </div>
         </div>

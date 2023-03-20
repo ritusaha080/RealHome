@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Property;
 use App\Models\agent;
 use App\Models\testimonials;
+use App\Models\partners;
 
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class HomepageController extends Controller
         $agents=agent::all();
          //dd($agents);
          $testimonials=testimonials::all();
-        return view('frontend.index.index',compact('properties','agents','testimonials'));  
+         $partners=partners::all();
+        return view('frontend.index.index',compact('properties','agents','testimonials','partners'));  
         
     }
 

@@ -60,7 +60,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <@foreach ($partners as $partner)
+                            @foreach ($partners as $partner)
                                 <tr>
                                     <td>{{ $partner->id }}</td>
                                     <td>{{ $partner->name}}</td>

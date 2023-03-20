@@ -18,6 +18,8 @@
                     <div class="object-img">
                         <img src="{{ asset('storage/post-image/' . $properties->image) }}" alt=""
                             style="height:100px;width:auto;">
+                            <img src="assets/images/blog/02.jpg" alt="">
+                            <img src="assets/images/blog/03.jpg" alt="">
                     </div>
                 </div>
                 <div class="related-post-wrap">
