@@ -1,0 +1,44 @@
+
+
+
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/Variables";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/section-title";
+
+@import "layout/header";
+@import "layout/hero-slider";
+@import "layout/footer";
+
+
+//page
+@import "pages/home";
+@import "pages/about";
+@import "pages/property";
+@import "pages/blog";
+@import "pages/contact";
+@import "pages/object";
+@import "pages/faq";
+@import "pages/testimoni";
+
+
+
+
+
+
+
+
+
+
+
+
+
+

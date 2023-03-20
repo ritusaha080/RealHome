@@ -1,0 +1,121 @@
+
+.object-area {
+    padding-top: 60px;
+}
+
+.main-object {
+    .object-title {
+        h4 {
+            a {
+                font-size: 45px;
+                color: $theme-font;
+                line-height: 50px;
+            }
+        }
+    }
+}
+
+.object-img {
+    padding: 60px 0;
+    border-bottom: 1px solid $border-ash;
+    .slick-prev {
+        bottom: 15px;
+        position: absolute;
+        text-transform: uppercase;
+        font-size: 19px;
+        line-height: 26px;
+        color: $theme-color;
+        border: none;
+        background: transparent;
+    }
+    .pull-right {
+        right: 0;
+    }
+    .pull-left {
+        left: 0;
+    }
+}
+.related-post-wrap {
+    padding: 60px 0;
+    .coment-form {
+        .comnt-input-title {
+            border-bottom: 1px solid $border-ash;
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+    }
+}
+.related-post {
+    display: flex;
+    column-gap: 30px;
+    .single-property {
+        border: none;
+        text-align: start;
+        a {
+            h5 {
+                font-size: 20px;
+                line-height: 30px;
+                @media (max-width: 1200px) {
+                    font-size: 16px;
+                }
+                @media (max-width: 991px) {
+                    font-size: 14px;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+}
+
+
+.object-category {
+    margin-top: 100px;
+    padding-bottom: 30px;
+    @media (max-width: 768px) {
+        margin-top: 0px;
+    }
+    .object-category-title {
+        display: flex;
+        @media (max-width: 991px) {
+            display: block;
+        }
+        li {
+            .label-icon {
+                width: 14px;
+                display: inline-block;
+            }
+            color: $theme-color;
+            font-size: 16px;
+            line-height: 30px;
+            margin-right: 40px;
+            @media (max-width: 1200px) {
+                margin-right: 20px;
+            }
+            @media (max-width: 991px) {
+                margin-right: 15px;
+            }
+            span {
+                color: $content-color;
+            }
+        }
+    }
+    .category-description {
+        font-size: 14px;
+        line-height: 24px;
+        color: $body-color;
+    }
+}
+.object-category-info {
+    padding: 30px 0;
+    margin: 30px 0;
+    border-top: 1px solid $border-ash;
+    border-bottom: 1px solid $border-ash;
+    li {
+        font-size: 16px;
+        line-height: 27px;
+        color: #3c3c3c;
+        span {
+            color: $body-color
+        }
+    }
+}

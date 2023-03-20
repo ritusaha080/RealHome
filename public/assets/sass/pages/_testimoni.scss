@@ -1,0 +1,25 @@
+
+.single-testimoni-div {
+    padding: 30px;
+    margin-bottom: 30px;
+}
+.testimoni-description {
+    .testimoni-authore {
+        .testimoni-authore-name {
+            font-size: 16px;
+            color: #3c3c3c;
+            font-weight: 300;
+            .name-bold {
+                font-weight: 500;
+            }
+        }
+    }
+    .authore-link {
+        a {
+            font-size: 16px;
+            color: $theme-color;
+            line-height: 27px;
+            text-decoration: underline;
+        }
+    }
+}

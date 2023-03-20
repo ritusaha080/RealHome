@@ -1,0 +1,49 @@
+
+.theme-btn {
+	display: inline-block;
+	background: $theme-color;
+	color: $white;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: 500;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	outline: none;
+	border: 1px solid $theme-color;
+	border-radius: 3px;
+	padding: 0 15px;
+	transition: all .3s ease;
+	i {
+		height: 45px;
+		width: 45px;
+		line-height: 45px;
+		text-align: center;
+		background: $icon-bg-2;
+		border-radius: 50px;
+		display: inline-block;
+		color: $primary-theme;
+		font-size: 20px;
+		font-weight: 500;
+		margin-left: 20px;
+		margin-right: 3px;
+	}
+	&:hover {
+		background: $white;
+		color: $theme-color;
+		border: 1px solid $theme-color;
+	}
+}
+
+
+
+
+
+
+
+
+// button for blog page 
+
+
+
+

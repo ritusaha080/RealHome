@@ -1,0 +1,51 @@
+.section-title {
+    h3 {
+        font-size: 45px;
+        color: $theme-font;
+        line-height: 45px;
+        font-weight: 400;
+        padding-bottom: 60px;
+        text-transform: capitalize;
+        position: relative;
+        display: inline-block;
+        &::after{
+            position: absolute;
+            content: "";
+            height: 3px;
+            width: 110px;
+            background: $theme-color;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%
+            );
+        }
+        @media (max-width: 991px) {
+            font-size: 25px;
+            line-height: 40px;
+        }
+        span {
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+    }
+    .after-none {
+        &::after{
+            display: none;
+        }
+    }
+}
+
+.camp-link{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    li {
+        margin: 0 3px;
+        color: $body-color;
+        font-weight: 500;
+        a {
+            color: $theme-color;
+            font-weight: 300;
+        }
+    }
+}

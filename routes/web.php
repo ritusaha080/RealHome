@@ -7,8 +7,16 @@ use App\Http\Middleware\ProtectAdminRoutes;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\BlogCategoryController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\PostSettingsController;
+use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\AgentController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\TestimonialController;
+
 
 
 /*
@@ -38,6 +46,10 @@ Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 Route::middleware(['auth'])->group(function(){
 
 Route::get('/admin/dashboard',[AdminController::class,'dashboard'])->name('admin.dashboard');
+
+//user dashboard
+Route::get('/user/dashboard',[UserController::class,'userDashboard'])->name('user.dashboard');
+
 
 Route::get('/admin/allBlog',[BlogCategoryController::class,'index'])->name('admin.blog.index');
 // Blog
@@ -74,9 +86,52 @@ Route::get('/settings/details',[PostSettingsController::class,'settings'])->name
 Route::post('/settings/details/form',[PostSettingsController::class,'postSettings'])->name('settings.post');
 Route::get('/settingsy/list',[PostSettingsController::class,'settingsList'])->name('settings.list');
 
-
+//updated settings
 Route::get('/settings-view',[PostSettingsController::class,'settingsView'])->name('settings.settingsView');
 Route::post('/settings-save',[PostSettingsController::class,'settingsSave'])->name('settings.settingsSave');
 
+
+//agents section
+Route::get('/agent-view',[AgentController::class,'agentView'])->name('agent.view');
+Route::post('/agent-add',[AgentController::class,'agentAdd'])->name('agent.add');
+Route::get('/agent-list',[AgentController::class,'agentList'])->name('agent.list');
+
+//testimonials section
+Route::get('/testimonial-view',[TestimonialController::class,'testimonialView'])->name('testimonial.view');
+Route::post('/testimonial-add',[TestimonialController::class,'testimonialAdd'])->name('testimonial.add');
+Route::get('/testimonial-list',[TestimonialController::class,'testimonialList'])->name('testimonial.list');
+
+
+//Faq
+Route::get('/faq-view',[FaqController::class,'faqView'])->name('faq.view');
+Route::post('/faq-save',[FaqController::class,'faqAdd'])->name('faq.save');
+Route::get('/faq-list',[FaqController::class,'list'])->name('faq.list');
 });
+
+//Partners
+
+Route::get('/partner/details',[PartnerController::class,'partner'])->name('partners.view');
+Route::post('/partner/details/form',[PartnerController::class,'PostPartner'])->name('partners.post');
+Route::get('/partner/list',[PartnerController::class,'partnerList'])->name('partners.list');
+
+
+// front end code section 
+
+Route::get('/frontend/post',[FrontendController::class,'show'])->name('frontend.post');
+Route::get('/frontend/get/{id}',[FrontendController::class,'blog'])->name('frontend.blog.get');
+// link with the index page
+Route::get('/frontend/post/{id}',[FrontendController::class,'bloglist'])->name('frontend.post.details');
+
+// Home page section
+
+Route::get('/homepage/get',[HomepageController::class,'homePage'])->name('homepage.get');
+//About us
+Route::get('/about/get',[HomepageController::class,'about'])->name('about.get');
+//Property
+Route::get('/property/get',[HomepageController::class,'property'])->name('property.get');
+//contact
+Route::get('/contact/get',[HomepageController::class,'contact'])->name('contact.get');
+//show Property Details
+Route::get('/property/details/show/{id}',[HomepageController::class,'propertyShow'])->name('property.details.show');
+
 

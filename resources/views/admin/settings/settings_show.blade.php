@@ -32,7 +32,17 @@
       <input name="youtube" type="title" class="form-control" id="youtube" value="{{ $settings['youtube'] }}">
     </div>
   </div>
-  <!-- /.card-body -->
+    <div class="input-group mb-3">
+      <label class="input-group-text" for="inputGroupSelect01">E-mail</label>
+      <input name="email" type="email" class="form-control" id="email" value="{{ isset($settings['email']) ? $settings['email'] : '' }}">
+    </div>
+  </div>
+ {{-- <div class="input-group mb-3">
+    <label class="input-group-text" for="inputGroupSelect01">E-mail</label>
+    <input name="email" type="email" class="form-control" id="email" value="{{ $settings['email'] }}">
+  </div> --}}
+</div>
+  <!-- /.card-body --> 
 
   <div class="card-footer">
     <button type="submit" class="btn btn-primary">Submit</button>

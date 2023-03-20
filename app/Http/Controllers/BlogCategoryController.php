@@ -30,7 +30,7 @@ class BlogCategoryController extends Controller
         //dd($request->all());
         $name = null;
         if($request->hasFile('image')){
-            $name=$request->file('image')->getClientOriginalName().'.'.$request->file('image')->getClientOriginalExtension();
+            $name=time().'.'.$request->file('image')->getClientOriginalExtension();
             $image=Storage::put('/public/post-image/'.$name,file_get_contents($request->file('image')));
         }
         $blogs = Blog::create([
@@ -72,10 +72,6 @@ class BlogCategoryController extends Controller
     
     
 
-    public function create()
-    {
-        //
-    }
     public function delete_post(Request $request){
         $id = $request->get('id');
         $blog = Blog::find($id);

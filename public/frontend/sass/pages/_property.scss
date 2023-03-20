@@ -1,0 +1,42 @@
+
+
+.nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    @media (max-width: 410px) {
+        flex-direction: column;        
+    }
+    .nav-item {
+        .nav-link {           
+            margin-left: 35px;
+            color: $theme-font;
+            font-size: 16px;
+            line-height: 60px;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            background: transparent;
+            @media (max-width: 991px) {
+                margin-left: 10px;
+            }
+            &.active{
+                border-bottom: 3px solid $theme-color;
+    
+            }
+        }
+    }
+}
+// .tab-content {
+//     display: none;
+// }
+.tab-area {
+    .property-details {
+        li {
+            padding: 5px;
+            @media (max-width: 1200px) {
+                font-size: 11px;
+            }
+        }
+    }
+}

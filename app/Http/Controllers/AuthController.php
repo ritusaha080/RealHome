@@ -46,7 +46,7 @@ class AuthController extends Controller
         if(Auth::user()->role == RoleEnum::ADMIN){
             return redirect()->route('admin.dashboard');
         }
-        return response('You have successfully logged in. But user content isn\'t ready yet!');        
+        return redirect()->route('user.dashboard');
     }
     public function logout(): \Illuminate\Http\RedirectResponse
     {

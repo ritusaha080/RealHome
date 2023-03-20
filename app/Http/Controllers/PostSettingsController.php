@@ -51,9 +51,7 @@ class PostSettingsController extends Controller
     {
         $data = $request->except(['_method', '_token']);
         foreach($data as $key => $value) {
-            Settings::updateOrCreate([
-                'name' => $key,
-            ], ['value' => $value]);
+            Settings::updateOrCreate(['name' => $key], ['value' => $value]);
         }
 
         return to_route('settings.settingsView')->with('posted','Data Entry Successfull');

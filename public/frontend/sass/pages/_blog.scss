@@ -1,0 +1,361 @@
+.blog-wrapper {
+    padding: 0px 50px 0px 0;
+    border-right: 2px solid $body-bg;
+    @media (max-width: 768px) {
+        padding: 0;
+        border: none;
+    }
+}
+
+.single-blog {
+    padding: 20px 0 50px 0;
+    border-bottom: 2px solid $body-bg;
+    .blog-title {
+        font-size: 45px;
+        color: $theme-font;
+        line-height: 50px;
+        margin-bottom: 20px;
+        @media (max-width: 991px) {
+            font-size: 35px;
+            line-height: 30px;
+        }
+        @media (max-width: 576px) {
+            font-size: 25px;
+            line-height: 30px;
+        }
+        a {
+            font-size: 45px;
+            color: $theme-font;
+            line-height: 50px;
+            margin-bottom: 20px;
+            @media (max-width: 991px) {
+                font-size: 35px;
+                line-height: 30px;
+            }
+            @media (max-width: 576px) {
+                font-size: 25px;
+                line-height: 30px;
+            }
+        }
+    }
+    .blog-img {
+        margin: 30px 0;
+        display: inline-block;        
+        img {
+            width: 100%;
+        }
+    }
+    .blog-content {
+        p {
+            color: $body-color;
+            font-size: 16px;
+            line-height: 27px;
+            margin-bottom: 20px;
+        }
+        .content-middle-title {
+            font-size: 20px;
+            line-height: 50px;
+            color: $theme-font;
+            margin: 40px 0 15px 0;
+        }
+    }
+}
+
+
+.pagination-list {
+    display: flex;
+    padding-top: 30px;
+    align-items: center;
+    margin-bottom: 30px;
+    li {
+        margin: 5px;
+        a {
+            height: 50px;
+            width: 50px;
+            background: $theme-color;
+            line-height: 50px;
+            text-align: center;
+            display: inline-block;
+            color: $white;
+        }
+        a.active{
+            color: $content-color;
+            background: $body-bg;
+
+        }
+    }
+}
+
+.category-wrap {
+    margin-bottom: 40px;
+    .category-title {
+        color: $theme-font;
+        font-size: 20px;
+        line-height: 50px;
+        margin-bottom: 10px;
+    }
+    .category-list {
+        li {
+            font-size: 16px;
+            line-height: 35px;
+            color: $body-color;
+            a {
+                font-size: 16px;
+                line-height: 35px;
+                color: $body-color;
+                transition: all .3s ease;
+                .post-title {
+                    font-size: 16px;
+                    line-height: 35px;
+                    color: $theme-font;
+                    transition: all .3s ease;
+                }
+                p {
+                    color: $body-color;
+                    font-size: 14px;
+                    line-height: 24px;
+                    transition: all .3s ease;
+                }
+                span {
+                    font-size: 14px;
+                    line-height: 35px;
+                    color: $body-color;
+                    transition: all .3s ease;
+                }
+                &:hover{
+                    color: $theme-color;
+                    .post-title, p, span {
+                        color: $theme-color;                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+// blog post start 
+.blog-post {
+    padding: 20px 0 20px 0;
+}
+
+.blog-post-details {
+    display: flex;
+    border-bottom: 2px solid $body-bg;
+    padding: 30px 0;
+    @media (max-width: 1200px) {
+        flex-wrap: wrap;        
+    }
+    li {
+        font-size: 12px;
+        line-height: 24px;
+        color: $body-color;
+        padding: 0px 20px;
+        position: relative;
+        &:last-child{
+            &::after {
+                display: none;
+            }
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            height: 10px;
+            width: 1px;
+            background: $body-color;
+            top: calc(50% - 5px);
+            right: 0;
+            transform: rotate(30deg);
+        }
+        a {
+            color: $theme-color;
+        }
+    }
+}
+.bog-post-social {
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+    li {
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+        text-align: center;
+        margin: 2px;
+        border-radius: 5px;
+        a {
+            color: $white;
+        }
+    }
+}
+
+
+// color code 
+.fb-color {
+    background: #38569d;
+}
+.trm-color {
+    background: #2d4d68;
+}
+.twt-color {
+    background: #00aaf3;
+}
+.gpls-color {
+    background: #c03100;
+}
+.pr-color {
+    background: #d11a14;
+}
+.mail-color {
+    background: #602bb3;
+}
+.prnt-color {
+    background: #00af96;
+}
+.plus-color {
+    background: #ea6339;
+}
+
+
+// comment section start 
+.single-comnt {
+    display: flex;
+    column-gap: 45px;
+    padding: 40px 50px;
+    background: $secondary-bg;
+    @media (max-width: 1200px) {
+        padding: 30px 30px;
+    }
+    @media (max-width: 991px) {
+        padding: 20px 20px;
+        column-gap: 20px;
+    }
+    .authore-img {
+        width: 100px;
+        img {
+            width: 100%;
+        }
+        .authore-img-title{
+            font-size: 12px;
+            line-height: 28px;
+            color: #2a8da6;
+        }
+    }
+    .comnt-details {
+        width: 75%;
+        .authore-name {
+            color: #242424;
+            font-size: 23px;
+            line-height: 34px;
+            margin-bottom: 15px;
+            @media (max-width: 991px) {
+                font-size: 18px;
+                line-height: 28px;
+                margin-bottom: 10px;
+            }
+        }
+        .authore-comnt {
+            font-size: 14px;
+            line-height: 24px;
+            color: $body-color;
+            margin-bottom: 15px;
+            @media (max-width: 1200px) {
+                font-size: 12px;
+                line-height: 20px;
+            }
+        }
+        .authores-posts {
+            font-size: 12px;
+            line-height: 28px;
+            color: #242424;
+            a {
+                color: #2a8da6;
+            }
+        }
+        
+    }
+}
+
+.coment-list {
+    .coment-count {
+        font-size: 20px;
+        line-height: 65px;
+        color: $body-color;
+    }
+}
+.replay-comnt {
+    margin: 50px 0 50px 50px;
+    position: relative;
+    .enter-icon{
+        width: 30px;
+        position: absolute;
+        left: -50px;
+        top: 0;
+    }
+}
+.coment-form {
+    .comnt-input-title {
+        font-size: 20px;
+        line-height: 65px;
+        color: $body-color
+    }
+    .input-feild {
+        width: 47%;
+        height: 60px;
+        background: $white;
+        padding: 0 20px;
+        border: 1px solid #e6e6e6;
+        outline: none;
+        color: $content-color-01;
+        border-radius: 5px;
+        margin: 30px 30px 30px 0;
+        @media (max-width: 1200px) {
+            width: 100%;
+            margin: 30px 0 30px 0;
+        }
+        &:last-child{
+            margin: 30px 0px 30px 0;
+            @media (max-width: 1200px) {
+                width: 100%;
+                margin: 30px 0 30px 0;
+            }
+        }
+        &::placeholder{
+            color: #c2c1c1
+        }
+    }
+    .mail-field {
+        margin-right: 0;
+    }
+    #input_Comnt {
+        width: 99%;
+        max-height: 150px;
+        padding: 20px;
+        border: 1px solid #e6e6e6;
+        outline: none;
+        color: $content-color-01;
+        border-radius: 5px;
+        &::placeholder{
+            color: #c2c1c1
+        }
+    }
+    .coment-btns {
+        button {
+            height: 50px;
+            padding: 0 30px;
+            background: $theme-color;
+            border: none;
+            color: $white;
+            margin: 30px 20px 30px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .clear-btn {
+            background: $body-bg;
+            color: #c2c1c1;
+        }
+    }
+}
+// blog post end 

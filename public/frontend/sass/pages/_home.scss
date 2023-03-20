@@ -1,0 +1,351 @@
+
+
+// offer section start 
+.offer-title {
+    text-align: end;
+    padding-bottom: 30px;
+    position: relative;
+    @media (max-width: 1200px) {
+        padding-bottom: 15px;
+    }
+    &::after{
+        content: "";
+        position: absolute;
+        height: 3px;
+        width: 30px;
+        background: $theme-font;
+        bottom: 0;
+        right: 0;
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+    h2 {
+        font-size: 34px;
+        line-height: 50px;
+        color: $theme-font;
+    }
+}
+.offer-details {
+    margin-bottom: 30px;
+    p {
+        line-height: 27px;
+    }
+}
+// offer section end 
+
+// service section start 
+.service-section {
+    background: $primary-bg;
+}
+.single-service {
+    margin-bottom: 30px;
+    text-align: center;
+    i{
+        font-size: 20px;
+        color: $theme-font;
+    }
+    h4 {
+        font-size: 20px;
+        line-height: 50px;
+        color: $theme-font
+    }
+    p {
+        font-size: 14px;
+        line-height: 24px;
+        color: $body-color;
+    }
+}
+
+// property area start 
+.property-area {
+    background: $secondary-bg;
+}
+.more-property {
+    text-align: center;
+    a {
+        display: inline-block;
+    }
+}
+.single-property {
+    border: 1px solid $border-color;
+    text-align: center;
+    background: $white;
+    margin-bottom: 30px;
+    a{
+        img {
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+        }
+        h5 {
+            font-size: 22px;
+            line-height: 50px;
+            color: $theme-font;
+            margin-top: 13px;
+        }
+        p {
+            font-size: 15px;
+            color: $body-color;
+        }
+        span {
+            font-size: 16px;
+            line-height: 50px;
+            color: $theme-color;
+        }
+    }
+}
+.property-details {
+    margin-top: 12px;
+    display: flex;
+    padding: 15px 0;
+    justify-content: center;
+    border-top: 1px solid $border-color;
+    li {
+        padding: 0 15px;
+        font-size: 13px;
+        color: $body-color;
+        @media (max-width: 1200px) {
+            padding: 0 5px;
+            font-size: 10px;
+        }
+    }
+}
+// property area end 
+
+
+// agent area css start 
+.agents-wrapper {
+    .slick-dots {
+        display: flex;
+        position: absolute;
+        top: 100px;
+        left: 185%;
+        @media (max-width: 1200px) {
+            top: 45px;
+            left: 200%;
+        }
+        @media (max-width: 991px) {
+            top: 6px;
+            left: 240%;
+        }
+        @media (max-width: 768px) {
+            top: 101%;
+            left: 51%; 
+        }
+        @media (max-width: 584px) {
+            top: 105%;
+            left: 80%; 
+        }
+        button {
+            font-size: 0px;
+            height: 15px;
+            width: 15px;
+            background: transparent;
+            border: 2px solid #b4b4b4;
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+        .slick-active {
+            button {
+                background: $theme-color;
+                border: 2px solid $theme-color;
+            }
+        }
+    }    
+}
+.agetn-title {
+    h3 {
+        @media (max-width: 991px) {
+            padding-bottom: 15px;
+        }
+        &::after{
+            left: 0;
+            transform: translateX(0);
+            @media (max-width: 991px) {
+                left: 145px;
+                transform: translateX(0);
+                top: 20px;
+            }
+        }
+    }
+}
+.agent-details {
+    h5 {
+        font-size: 25px;
+        line-height: 27px;
+        color: $theme-font;
+        margin-bottom: 30px;
+        @media (max-width: 991px) {
+            margin-bottom: 15px;
+        }
+    }
+    p {
+        font-size: 16px;
+        line-height: 27px;
+        color: $body-color;
+        margin-bottom: 30px;
+        @media (max-width: 991px) {
+            margin-bottom: 0px;
+            font-size: 14px;
+        }
+        @media (max-width: 490px) {
+            margin-bottom: 30px;
+        }
+    }
+}
+.agents-contacts {
+    display: flex;
+    column-gap: 25px;
+    align-items: center;
+    @media (max-width: 490px) {
+        display: block;
+        margin-bottom: 30px;
+    }
+    li {
+        font-size: 16px;
+        line-height: 27px;
+        color: $theme-font;
+        i{
+            margin-right: 10px;
+        }
+        a {
+            color: $theme-color;
+            text-decoration: underline;
+        }
+    }
+}
+// agent area css end  
+
+// more about us section start 
+.more-about {
+    padding: 50px 0;
+    background: $body-bg;
+}
+.more-about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h2 {
+        font-size: 37px;
+        line-height: 50px;
+        color: $theme-font;
+        font-weight: 400;
+        max-width: 70%;
+        @media (max-width: 576px) {
+            font-size: 20px;
+            line-height: 30px;
+            max-width: 50%;
+        }
+        span {
+            font-weight: 500;
+        }
+    }
+}
+// more about us section end 
+
+//testimon area start 
+.testimoni-wrapper {
+    .slick-arrow{
+        position: absolute;
+        top: 50%;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 50px;
+        color: $white;
+        @media (max-width: 768px) {
+            top: 90%;
+        }
+    }
+    .pull-left {
+        left: 50px;
+        z-index: 1;
+        @media (max-width: 768px) {
+            left: 30%;
+        }
+    }
+    .pull-right {
+        left: 95%;
+        z-index: 1;
+        @media (max-width: 768px) {
+            left: 60%;
+        }
+    }
+    .slick-dots {
+        display: flex;
+        position: absolute;
+        left: 48%;
+        transform: translateX(-50%);
+        bottom: 15%;
+        button {
+            font-size: 0px;
+            height: 15px;
+            width: 15px;
+            background: transparent;
+            border: 2px solid #c8c9c5;
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+        .slick-active {
+            button {
+                background: $white;
+                border: 2px solid $white;
+            }
+        }
+    }
+}
+.single-testimoni {
+    width: 100%;
+    height: 575px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .testimoni-title {
+        h3 {
+            color: $white;
+        }
+    }
+}
+.testimoni-content {
+    text-align: center;
+    p {
+        max-width: 755px;
+        font-size: 24px;
+        line-height: 35px;
+        color: $white;
+        margin-bottom: 25px;
+        @media (max-width: 991px) {
+            max-width: 555px;
+            font-size: 20px;
+            line-height: 32px;
+        }
+    }
+    span {
+        font-size: 20px;
+        line-height: 27px;
+        color: $white;
+    }
+}
+
+//testimon area end 
+
+// partner section start 
+.brand-area {
+    h5 {
+        display: none;
+    }
+}
+.brand-active {
+    ul.slick-dots {
+        display: none;
+    }
+    .brand-img {
+        img {
+            margin: auto;
+        }
+    }
+}

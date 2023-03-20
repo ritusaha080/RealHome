@@ -64,4 +64,8 @@
                                     <td>{{ $category->category_name }}</td>
                                 </tr>
                                 @endforeach
-                            @endsection
+                           
+            </div>
+        </div>
+    </div>
+    @endsection

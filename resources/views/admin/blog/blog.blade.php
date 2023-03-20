@@ -19,15 +19,6 @@
 <form action="{{route('admin.blog.post')}}" method="post" enctype="multipart/form-data">
   @method('POST')
   @csrf
-  {{-- <div class="card-body">
-    <div class="form-group">
-      <label for="exampleInputtitle">user_id</label>
-      <input name="user_id" type="user_id" class="form-control" id="exampleInputuser_id" placeholder="Enter user_id">
-    </div>
-    @error('user_id')
-    <span class="text-danger">{{$message}}</span>
-    @enderror --}}
-
 
   <div class="card-body">
     <div class="form-group">

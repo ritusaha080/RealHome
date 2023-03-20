@@ -1,0 +1,46 @@
+
+// company about section start 
+.about-area {
+    padding: 70px 0 70px 0;
+}
+.about-img {
+    margin-bottom: 30px;
+    text-align: center;
+}
+.about-content {
+    margin-bottom: 30px;
+    p {
+        line-height: 27px;
+        font-size: 14px;
+    }
+}
+
+// company about section end 
+.about-service {
+    background: #f6f6f6;
+}
+
+
+// team section start 
+.team-member {
+    h5 {
+        font-size: 22px;
+        line-height: 50px;
+        color: $theme-font;
+        margin-top: 13px;
+        @media (max-width: 584px) {
+            font-size: 18px;
+        }
+        @media (max-width: 584px) {
+            font-size: 14px;
+        }
+    }
+    p {
+        font-size: 15px;
+        color: $body-color;
+        @media (max-width: 584px) {
+            font-size: 12px;
+        }
+    }
+}
+// team section end  
