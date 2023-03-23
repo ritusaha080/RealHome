@@ -11,12 +11,12 @@
     <link rel="stylesheet" href="{{asset('frontend')}}/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{asset('frontend')}}/css/default.css">
     <link rel="stylesheet" href="{{asset('frontend')}}/sass/style.css">
-    
+
     <script src="{{asset('frontend')}}/js/jquery.min.js"></script>
 </head>
 <body>
 
-    <!-- header section start  --> 
+    <!-- header section start  -->
     <header class="header-area">
         <!-- menu area start  -->
         <div class="menu-area">
@@ -76,6 +76,7 @@
                     <ul class="social footer-social">
                         <li><a href="{{ getFacebookLink() }}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                         <li><a href="{{ getYoutubeLink()}}"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+
                         <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                         <li><a href="{{ getEmailLink()}}"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
                     </ul>
@@ -90,7 +91,7 @@
                         <li><a href="property.html">Property</a></li>
                         <li><a href="#">Gallary</a></li>
                         <li><a href="blog.html">Our Blog</a></li>
-                        <li><a href="contact.html">Contacts</a></li>                         
+                        <li><a href="contact.html">Contacts</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-3 col-12 mb-30">
@@ -101,7 +102,7 @@
                         <li><a href="#">Sign in</a></li>
                         <li><a href="#">Forum</a></li>
                         <li><a href="#">Promotions</a></li>
-                        <li><a href="#">News</a></li>                      
+                        <li><a href="#">News</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-3 col-12 mb-30">
@@ -110,12 +111,11 @@
                     </div>
                     <ul class="footer-widget footer-contact">
                         @foreach ( getSettingsData(['facebook','youtube','email','freephones']) as $settings_data )
-                        <li>{{$settings_data}}</li> 
+                        <li>{{$settings_data}}</li>
                         @endforeach
-                                      
-                        <li>Telephone: +1 959 603 6035</li>                     
-                        <li>FAX: +1 800 559 6580</li>                     
-                        <li class="mail">info@realhome.com</li>                     
+                        <li>Telephone: +1 959 603 6035</li>
+                        <li>FAX: +1 800 559 6580</li>
+                        <li class="mail">info@realhome.com</li>
                     </ul>
                 </div>
             </div>
@@ -123,10 +123,10 @@
     </footer>
     <!-- footer section end  -->
 
-    
+
 
     <script src="{{asset('frontend')}}/js/bootstrap.bundle.min.js"></script>
     <script src="{{asset('frontend')}}/js/jquery-plugin-collection.js"></script>
-   <script src="{{asset('frontend')}}/js/script.js"></script>
+    <script src="{{asset('frontend')}}/js/script.js"></script>
 </body>
 </html>
