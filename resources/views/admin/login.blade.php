@@ -112,7 +112,8 @@
                             <div class="row mt-3">
                                 <div class="col-12 text-center">
                                     <p class="text-muted">Don't have an account? <a href="pages-register.html"
-                                            class="text-muted ms-1"><b>Sign Up</b></a></p>
+                                            class="text-muted ms-1"></a></p>
+                                            <a href="{{route('signup')}}" class="theme-btn">Sign Up</a>
                                 </div> <!-- end col -->
                             </div>
                             <!-- end row -->

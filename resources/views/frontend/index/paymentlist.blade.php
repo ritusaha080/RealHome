@@ -1,5 +1,6 @@
 @extends('admin.layouts.master')
 @section('admin.content')
+
     <div class="row">
         <div class="col">
 
@@ -45,7 +46,7 @@
         <div class="col">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Expandable Table</h3>
+                    <h3 class="card-title"> Expandable Table </h3>
                 </div>
                 <!-- ./card-header -->
                 <div class="card-body">
@@ -53,48 +54,24 @@
                         <thead>
                             <tr>
                                 <th>id</th>
-                                <th>category_name</th>
-                                <th>title</th>
-                                <th>description</th>
-                                <th>image</th>
-                                <th>date</th>
-                                <th>Operation</th>
+                                <th>user_id</th>
+                                <th>property_id</th>
+                                <th>card_number</th>
+                                <th>cardholder_name</th>
+                                <th>expired_date</th>
+                                <th>cug_number</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($blogs as $blog)
+                            <@foreach ($payments as $payment)
                                 <tr>
-                                    <td>{{ $blog->id }}</td>
-                                    <td>{{ $blog->blog_category_id }}</td>
-                                    <td>{{ $blog->title }}</td>
-                                    <td>{{\Illuminate\Support\Str::limit($blog->description,100,"...")}}</td>
-                                    <td>
-                                        <img src="{{ asset('storage/post-image/' . $blog->image) }}" alt=""
-                                            style="height:100px;width:auto;">
-                                    </td>
-                                    <td>
-                                        {{$blog->created_at}}
-                                    </td>
-                                    
-                                    <td>
-                                        <div class="row">
-                                            <div class="col">
-                                                <a href="{{ route('post.edit', $blog->id) }}" type="submit"
-                                                    class="btn btn-warning">Edit</a>
-                                            </div>
-                                            <div class="col">
-                                                <form action={{ route('post.delete') }} method="POST">
-                                                    @csrf
-                                                    <input type="hidden" value={{ $blog->id }} name="id">
-                                                    <input type="submit" value="Delete" class="btn btn-danger">
-                                                </form>
-                                            </div>
-                                        </div>
-
-
-
-                                    </td>
-                                 
+                                    <td>{{ $payment->id }}</td>
+                                    <td>{{ $payment->property_id }}</td>
+                                    <td>{{ $payment->card_number }}</td>
+                                    <td>{{ $payment->cardholder_name }}</td>
+                                    <td>{{ $payment->expired_date }}</td>
+                                    <td>{{ $payment->cug_number}}</td>
+                                                                     
 
                                 </tr>
                                 @endforeach
@@ -106,8 +83,8 @@
                                 <!-- AdminLTE App -->
                                 <script src="{{ asset('assets') }}/dist/js/adminlte.min.js"></script>
                                 <!-- AdminLTE for demo purposes -->
-                                {{-- <script src="{{asset('assets')}}/dist/js/demo.js"></script> --}}
-                                </body>
+                                
+                            
 
-                                </html>
+                    
                             @endsection

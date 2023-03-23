@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Settings;
 use App\Http\Requests\PostRequest as RequestsPostRequest;
+use App\Models\AboutUs;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
@@ -16,7 +17,7 @@ class PostSettingsController extends Controller
         return view('admin.settings.settings');
     }
     public function postSettings(Request $request){
-        //dd($request->all());
+        //dd($settings = Settings::where('name')->first());
         
         $settings = Settings::create([
             'name'=>$request->get('name'),
@@ -56,4 +57,7 @@ class PostSettingsController extends Controller
 
         return to_route('settings.settingsView')->with('posted','Data Entry Successfull');
     }
+
+    
+    
 }

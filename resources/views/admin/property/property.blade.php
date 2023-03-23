@@ -48,21 +48,6 @@
                         <option value="{{$row->id}}">{{$row->category_name}}</option>
                         @endforeach
                 
-                            {{-- <option value="AK">Alaska</option>
-                            <option value="HI">Hawaii</option>
-                        
-                        
-                            <option value="CA">California</option>
-                            <option value="NV">Nevada</option>
-                            <option value="OR">Oregon</option>
-                            <option value="WA">Washington</option>
-                         --}}
-                            
-                       
-                            
-                            
-                        
-                       
                     </select>
                 </div> <!-- end col -->
 

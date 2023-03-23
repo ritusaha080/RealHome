@@ -1,36 +1,66 @@
 @extends('frontend.blogmaster')
-
 @section('blog.content')
+
+
+    <div class="row">
+        <div class="col">
+
+        </div>
+        <div class="col">
+            @if (\Illuminate\Support\Facades\Session::has('success'))
+                <div class="alert alert-success">
+                    {{ \Illuminate\Support\Facades\Session::get('success') }}
+                </div>
+            @endif
+            @if (\Illuminate\Support\Facades\Session::has('posted'))
+                <div class="alert alert-success">
+                    {{ \Illuminate\Support\Facades\Session::get('posted') }}
+
+                </div>
+            @endif
+            @if (\Illuminate\Support\Facades\Session::has('edited'))
+                <div class="alert alert-success">
+                    {{ \Illuminate\Support\Facades\Session::get('edited') }}
+
+                </div>
+            @endif
+
+        </div>
+        <div class="col">
+
+        </div>
+    </div>
+
     <!-- hero section start  -->
     <section class="hero-area">
         <div class="hero-wrapper">
 
 
             @foreach ( $properties as $property )
-                
+
             <div>
                 <div class="single-hero" style="background-image: url({{ asset('storage/post-image/' . $property->image) }});">
                     <div class="hero-content">
                         <h2>1{{ $property->title }}</h2>
                         <div class="info">
                             <h4>{{ $property->price}}</h4>
-                            <a href="#" class="theme-btn hero-btn">MORE INFO</a>
+                            <a href="{{ route('property.details.show', $property->id) }}" class="theme-btn hero-btn">MORE INFO</a>
                         </div>
                     </div>
                 </div>
             </div>
             @endforeach
-            <div>
+            {{-- <div>
                 <div class="single-hero" style="background-image: url({{ asset('frontend') }}/images/hero/hero01.jpeg);">
                     <div class="hero-content">
                         <h2>120 Anastasia Avenue, Coral Gables</h2>
                         <div class="info">
                             <h4>$625,000</h4>
-                            <a href="#" class="theme-btn hero-btn">MORE INFO</a>
+                            <a href="{{ route('property.details.show', $property->id) }}" class="theme-btn hero-btn">MORE INFO</a>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </section>
     <!-- hero section end   -->
@@ -121,23 +151,23 @@
                             <a href="#">
                                 <img src="{{ asset('storage/post-image/' . $property->image) }}" alt=""
                                     style="width:100% ;">
-                                    
+
                             </a>
-                         
+
                         </div>
-                        
+
                         <h4>{{ \Illuminate\Support\Str::limit($property->description, 100, '...') }}</h4>
                         <a href="{{ route('property.details.show', $property->id) }}" class="theme-btn">Read More</a>
-                        
+
                         <hr class="horizontal-line">
-                        
-                        
+
+
                     </div>
                     @endforeach
                     <div class="more-property mt-20">
                         <a href="#" class="theme-btn">ALL PROPERTIES</a>
                     </div>
-                    
+
             </div>
     </section>
     <!-- property section end  -->
@@ -148,13 +178,13 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-4 col-md-4 col-12">
-                        
+
                         <div class="slider-nav">
                             @foreach ($agents as $agent)
                             <div class="agent-img">
                                 <img src="{{asset('storage/post-image/' . $agent->image)}}" alt="">
                             </div>
-                                
+
                             @endforeach
                             {{-- <div class="agent-img">
                                 <img src="assets/images/agents/02.png" alt="">
@@ -169,7 +199,7 @@
                         @foreach ($agents as $agent)
                         <div class="slider-for">
                             <div class="agent-details">
-                                
+
                                 <h5>{{$agent->name}}</h5>
                                 <p>{{$agent->description}}</p>
                                 <ul class="agents-contacts">
@@ -177,7 +207,7 @@
                                     <li> <i class="fa fa-envelope" aria-hidden="true"></i> <a href="#">{{$agent->email}}</a> </li>
                                 </ul>
                             </div>
-                          
+
                         @endforeach
                     </div>
                 </div>
@@ -242,22 +272,24 @@
                 <div class="col-3">
                     <img src="{{ asset('frontend') }}/images/partner/00.png" alt="">
                 </div>
-                
+
+
+
+
                 <div class="col-9">
-                    
+
                     <div class="brand-active">
                         @foreach($partners as $partner)
+
                         <div class="brand-img">
                             <img src="{{ asset('storage/post-image/' . $partner->logo) }}" alt=""
                             style="height:100px;width:auto;">
                         </div>
                         @endforeach
-                        {{-- <div class="brand-img">
-                            <img src="{{ asset('frontend') }}/images/partner/02.png" alt="">
-                        </div> --}}
-                        
+
                     </div>
-                   
+
+
                 </div>
             </div>
         </div>

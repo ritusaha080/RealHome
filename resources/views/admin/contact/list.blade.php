@@ -53,49 +53,19 @@
                         <thead>
                             <tr>
                                 <th>id</th>
-                                <th>category_name</th>
-                                <th>title</th>
-                                <th>description</th>
-                                <th>image</th>
-                                <th>date</th>
-                                <th>Operation</th>
+                                <th>name</th>
+                                <th>email</th>
+                                <th>comments</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($blogs as $blog)
+                            @foreach ($contact_us as $contact)
                                 <tr>
-                                    <td>{{ $blog->id }}</td>
-                                    <td>{{ $blog->blog_category_id }}</td>
-                                    <td>{{ $blog->title }}</td>
-                                    <td>{{\Illuminate\Support\Str::limit($blog->description,100,"...")}}</td>
-                                    <td>
-                                        <img src="{{ asset('storage/post-image/' . $blog->image) }}" alt=""
-                                            style="height:100px;width:auto;">
-                                    </td>
-                                    <td>
-                                        {{$blog->created_at}}
-                                    </td>
+                                    <td>{{ $contact->id }}</td>
+                                    <td>{{ $contact->name }}</td>
+                                    <td>{{ $contact->email }}</td>
+                                    <td>{{ $contact->comments }}</td>
                                     
-                                    <td>
-                                        <div class="row">
-                                            <div class="col">
-                                                <a href="{{ route('post.edit', $blog->id) }}" type="submit"
-                                                    class="btn btn-warning">Edit</a>
-                                            </div>
-                                            <div class="col">
-                                                <form action={{ route('post.delete') }} method="POST">
-                                                    @csrf
-                                                    <input type="hidden" value={{ $blog->id }} name="id">
-                                                    <input type="submit" value="Delete" class="btn btn-danger">
-                                                </form>
-                                            </div>
-                                        </div>
-
-
-
-                                    </td>
-                                 
-
                                 </tr>
                                 @endforeach
 

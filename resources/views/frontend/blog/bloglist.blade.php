@@ -11,42 +11,23 @@
                 </ul>
                 <div class="col-lg-8 col-md-8">
                     <div class="blog-wrapper">
+                        @foreach ($blogs as $blog)
                         <div class="single-blog">
-                            <h4 class="blog-title"><a href="blog-post.html">Point of Architecture</a></h4>
+                            <h4 class="blog-title"><a href="blog-post.html">{{ $blog->title }}</a></h4>
                             <div class="blog-img">
-                                <a href="blog-post.html"><img src="{{asset('frontend')}}/images/blog/01.jpg" alt=""></a>
+                                <img src="{{ asset('storage/post-image/' . $blog->image) }}" alt=""
+                                style="width:100%;">
                             </div>
                             <div class="blog-content">
-                                <p>Vitapibus ac scelerisque vitae pede. Donec eget tellus non erat lacinia fertum. Donec in velit vel ipsum auctovinar. Proin umcorper urna et felisstibulum iaculis lacinia est. Proin dictum elem entum velit fusce euismod. Aenean commodo ligula eget dolor. Aenean massa. Lorem ipsum dolor sit amet, consec tetuer adipis elit, aliquam eget nibh etlibura. Lorem sitamet, consetetur sadipscing elitr.</p>
+                                <p>{{\Illuminate\Support\Str::limit($blog->description,100,"...")}}</p>
                             </div>
                             <div class="more-property text-start mt-30">
-                                <a href="#" class="theme-btn">Read More</a>
+                                <a href="{{ route('blog.details', $blog->id) }}" class="theme-btn">Read More</a>
                             </div>
-                        </div>
-                        <div class="single-blog">
-                            <h4 class="blog-title"><a href="#">Aliquam Erat Volutpat</a></h4>
-                            <div class="blog-img">
-                                <a href="blog-post.html"><img src="{{asset('frontend')}}/images/blog/02.jpg" alt=""></a>
-                            </div>
-                            <div class="blog-content">
-                                <p>Vitapibus ac scelerisque vitae pede. Donec eget tellus non erat lacinia fertum. Donec in velit vel ipsum auctovinar. Proin umcorper urna et felisstibulum iaculis lacinia est. Proin dictum elem entum velit fusce euismod. Aenean commodo ligula eget dolor. Aenean massa. Lorem ipsum dolor sit amet, consec tetuer adipis elit, aliquam eget nibh etlibura. Lorem sitamet, consetetur sadipscing elitr.</p>
-                            </div>
-                            <div class="more-property text-start mt-30">
-                                <a href="blog-post.html" class="theme-btn">Read More</a>
-                            </div>
-                        </div>
-                        <div class="single-blog">
-                            <h4 class="blog-title"> <a href="#">Mauris Posuere</a></h4>
-                            <div class="blog-img">
-                                <a href="#"><img src="{{asset('frontend')}}/images/blog/03.jpg" alt=""></a>
-                            </div>
-                            <div class="blog-content">
-                                <p>Vitapibus ac scelerisque vitae pede. Donec eget tellus non erat lacinia fertum. Donec in velit vel ipsum auctovinar. Proin umcorper urna et felisstibulum iaculis lacinia est. Proin dictum elem entum velit fusce euismod. Aenean commodo ligula eget dolor. Aenean massa. Lorem ipsum dolor sit amet, consec tetuer adipis elit, aliquam eget nibh etlibura. Lorem sitamet, consetetur sadipscing elitr.</p>
-                            </div>
-                            <div class="more-property text-start mt-30">
-                                <a href="#" class="theme-btn">Read More</a>
-                            </div>
-                        </div>
+                        </div>   
+                        @endforeach
+                        
+
                     </div>
                     <ul class="pagination-list">
                         <li><a href="javascript:void(0)" class="active">1</a></li>

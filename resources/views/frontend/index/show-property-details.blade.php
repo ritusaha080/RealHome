@@ -17,9 +17,9 @@
                     </div>
                     <div class="object-img">
                         <img src="{{ asset('storage/post-image/' . $properties->image) }}" alt=""
-                            style="height:100px;width:auto;">
-                            <img src="assets/images/blog/02.jpg" alt="">
-                            <img src="assets/images/blog/03.jpg" alt="">
+                            style="width:100%;">
+                            <img src="{{asset('frontend')}}/images/blog/02.jpg" alt="">
+                            <img src="{{asset('frontend')}}/images/blog/03.jpg" alt="">
                     </div>
                 </div>
                 <div class="related-post-wrap">
@@ -79,7 +79,7 @@
                         {{ $properties->description }}
                     </p>
                     <div class="more-property mt-20 text-start">
-                        <a href="#" class="theme-btn">BUY THIS OBJECT</a>
+                        <a href="{{route('payment.show',$properties->id)}}" class="theme-btn">BUY THIS OBJECT</a>
                     </div>
                 </div>
             </div>

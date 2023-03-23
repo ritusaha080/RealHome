@@ -46,7 +46,7 @@ class AuthController extends Controller
         if(Auth::user()->role == RoleEnum::ADMIN){
             return redirect()->route('admin.dashboard');
         }
-        return redirect()->route('user.dashboard');
+        return redirect()->route('homepage.get');
     }
     public function logout(): \Illuminate\Http\RedirectResponse
     {

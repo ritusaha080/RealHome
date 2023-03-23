@@ -16,4 +16,9 @@ class property extends Model
     {
         return $this->belongsTo(Category::class,'category_id');
     }
+
+    public function payment()
+    {
+        return $this->hasOne(payment::class,'property_id');
+    }
 }

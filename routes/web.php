@@ -16,7 +16,8 @@ use App\Http\Controllers\AgentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\TestimonialController;
-
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ContactController;
 
 
 /*
@@ -30,9 +31,9 @@ use App\Http\Controllers\TestimonialController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('frontend.index.index')->name('home.page');
+// });
 Route::get('/login', [AuthController::class, 'loginView'])->name('login.view');
 Route::get('/signup', [AuthController::class, 'signUpView'])->name('signup.view');
 Route::post('/login',[AuthController::class,'login'])->name('login');
@@ -106,6 +107,18 @@ Route::get('/testimonial-list',[TestimonialController::class,'testimonialList'])
 Route::get('/faq-view',[FaqController::class,'faqView'])->name('faq.view');
 Route::post('/faq-save',[FaqController::class,'faqAdd'])->name('faq.save');
 Route::get('/faq-list',[FaqController::class,'list'])->name('faq.list');
+
+//about us
+Route::get('/about-view',[PostSettingsController::class,'aboutView'])->name('about.view');
+Route::post('/about-add',[PostSettingsController::class,'aboutAdd'])->name('about.add');
+Route::get('/about-list',[PostSettingsController::class,'aboutList'])->name('about.list');
+
+
+
+//payment
+Route::post('/payment/post',[PaymentController::class,'paymentPost'])->name('payment.post');
+Route::get('/payment/post',[PaymentController::class,'paymentList'])->name('payment.list');
+
 });
 
 //Partners
@@ -115,7 +128,7 @@ Route::post('/partner/details/form',[PartnerController::class,'PostPartner'])->n
 Route::get('/partner/list',[PartnerController::class,'partnerList'])->name('partners.list');
 
 
-// front end code section 
+// front end code section
 
 Route::get('/frontend/post',[FrontendController::class,'show'])->name('frontend.post');
 Route::get('/frontend/get/{id}',[FrontendController::class,'blog'])->name('frontend.blog.get');
@@ -124,14 +137,29 @@ Route::get('/frontend/post/{id}',[FrontendController::class,'bloglist'])->name('
 
 // Home page section
 
-Route::get('/homepage/get',[HomepageController::class,'homePage'])->name('homepage.get');
+Route::get('/',[HomepageController::class,'homePage'])->name('homepage.get');
 //About us
 Route::get('/about/get',[HomepageController::class,'about'])->name('about.get');
 //Property
 Route::get('/property/get',[HomepageController::class,'property'])->name('property.get');
 //contact
-Route::get('/contact/get',[HomepageController::class,'contact'])->name('contact.get');
+Route::get('/contact/get',[HomepageController::class,'contact'])->name('contact.view');
 //show Property Details
 Route::get('/property/details/show/{id}',[HomepageController::class,'propertyShow'])->name('property.details.show');
 
+//purchased property
+Route::get('/purchased/property',[HomepageController::class,'purchasedProperty'])->name('purchased.property');
 
+//property buy
+Route::get('property-buy/{id}',[PaymentController::class,'propertyBuy'])->name('property.buy');
+
+Route::get('/payment/show/{id}',[PaymentController::class,'paymentShow'])->name('payment.show');
+
+//blog details show
+
+Route::get('/blog/details/show/{id}',[HomepageController::class,'blogShow'])->name('blog.details');
+
+//contact us post
+Route::get('/contact/view',[ContactController::class,'contactView'])->name('contact.view');
+Route::post('/contact/post',[ContactController::class,'contactPost'])->name('contact.post');
+Route::get('/contact/get',[ContactController::class,'contactList'])->name('contact.list');

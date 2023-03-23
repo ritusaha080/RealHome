@@ -38,7 +38,7 @@
 
 
         <div class="leftside-menu">
-    
+
             <!-- LOGO -->
             <a href="index-2.html" class="logo text-center logo-light">
                 <span class="logo-lg">
@@ -68,7 +68,7 @@
 
                     <li class="side-nav-item">
                         <a href="{{ route('admin.dashboard') }}" class="nav-link">
-                        
+
                     </li>
 
                     <li class="side-nav-item">
@@ -83,17 +83,17 @@
                                     <li>
                                         <a href="{{ route('post.list.all') }}">All Blogs</a>
                                     </li>
-                            
+
                                     <li>
                                         <a href="{{ route('admin.add.newblog') }}">Add New Blog</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                        
+
                     </li>
 
-                
+
                     {{-- PROPERTY SECTION --}}
 
                     <li class="side-nav-item">
@@ -108,14 +108,14 @@
                                     <li>
                                         <a href="{{ route('property.list') }}">All Properties</a>
                                     </li>
-                            
+
                                     <li>
                                         <a href="{{ route('property.view') }}">Add New Property</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                        
+
                     </li>
 
                     {{-- CATEGORY SECTION --}}
@@ -132,19 +132,19 @@
                                     <li>
                                         <a href="{{ route('category.list') }}">All Categories</a>
                                     </li>
-                            
+
                                     <li>
                                         <a href="{{ route('category.view') }}">Add New Category</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                        
+
                     </li>
-                  
+
                     {{-- SETTINGS SECTION --}}
 
-                    
+
                     <li class="side-nav-item">
                         <li class="side-nav-item">
                             <a data-bs-toggle="collapse" href="#adminSettings" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
@@ -157,11 +157,11 @@
                                     <li>
                                         <a href="{{ route('settings.settingsView') }}">Settings View</a>
                                     </li>
-                            
+
                                 </ul>
                             </div>
                         </li>
-                  
+
                         {{-- AGENT'S SECTION --}}
 
                         <li class="side-nav-item">
@@ -176,14 +176,14 @@
                                         <li>
                                             <a href="{{ route('agent.list') }}">All Agents</a>
                                         </li>
-                                
+
                                         <li>
                                             <a href="{{ route('agent.view') }}">Add New Agent</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-                            
+
                         </li>
 
                            {{-- testimonial section --}}
@@ -200,14 +200,14 @@
                                         <li>
                                             <a href="{{ route('testimonial.list') }}">All Testimonials</a>
                                         </li>
-                                
+
                                         <li>
                                             <a href="{{ route('testimonial.view') }}">Add New Testimonials</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-                            
+
                         </li>
 
                         {{-- FAQ SECTION --}}
@@ -223,11 +223,11 @@
                                         <li>
                                             <a href="{{ route('faq.view') }}">FAQ View</a>
                                         </li>
-                                
+
                                     </ul>
                                 </div>
                             </li>
-                            
+
                         </li>
 
                         {{-- PARTNERS SECTION --}}
@@ -244,16 +244,37 @@
                                         <li>
                                             <a href="{{ route('partners.list') }}">All Partners</a>
                                         </li>
-                                
+
                                         <li>
                                             <a href="{{ route('partners.view') }}">Add New Partner</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-                            
+
                         </li>
 
+                        {{-- Contact section --}}
+
+
+                        <li class="side-nav-item">
+                            <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="#adminContact" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
+                                    <i class="uil-store"></i>
+                                    <span> Contact </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="adminContact">
+                                    <ul class="side-nav-second-level">
+                                        <li>
+                                            <a href="{{ route('contact.list') }}">Contact Us</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </li>
+
+                        </li>
                 <!-- end Help Box -->
                 <!-- End Sidebar -->
 
@@ -273,253 +294,7 @@
 
 
 
-        {{-- <div class="leftside-menu"> --}}
 
-            <!-- LOGO -->
-            {{-- <a href="index-2.html" class="logo text-center logo-light">
-                <span class="logo-lg">
-                    <img src="{{ asset('assets/images/logo.png') }}" alt="" height="16">
-                </span>
-                <span class="logo-sm">
-                    <img src="{{ asset('assets/images/logo_sm.png') }}" alt="" height="16">
-                </span>
-            </a> --}}
-
-            <!-- LOGO -->
-            {{-- <a href="index-2.html" class="logo text-center logo-dark">
-                <span class="logo-lg">
-                    <img src="{{ asset('assets') }}/images/logo_sm.png"alt="" height="16">
-                </span>
-                <span class="logo-sm">
-                    <img src="{{ asset('assets') }}/images/logo_sm.png" alt="" height="16">
-                </span>
-            </a>
-
-            <div class="h-100" id="leftside-menu-container" data-simplebar> --}}
-
-                <!--- Sidemenu -->
-                {{-- <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-                               with font-awesome or any other icon font library -->
-                        <li class="nav-item">
-                            <a href="{{ route('admin.dashboard') }}" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer"></i>
-                                <p>
-                                    Dashboard
-                                </p>
-                            </a>
-                        </li>
-                       
-                    </ul>
-                </nav> --}}
-
-{{-- 
-
-
-
-
-
-                {{-- <li class="side-nav-item">
-                    <a data-bs-toggle="collapse" href="#sidebarBlog" aria-expanded="true"
-                        aria-controls="sidebarEcommerce" class="side-nav-link">
-                        <i class="uil-store"></i>
-                        <span> Blog </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                    <div class="collapse show" id="sidebarBlog">
-                        <ul class="side-nav-second-level">
-
-
-                            <li>
-                                <a href="{{ route('post.list.all') }}">All Blogs</a>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <div class="collapse" id="sidebarBlog">
-                        <ul class="side-nav-second-level">
-
-
-                            <li>
-                                <a href="{{ route('admin.add.newblog') }}">Add new Blog</a>
-                            </li>
-
-                        </ul>
-                    </div> --}}
-
-
-                    {{-- PROPERTY SECTION --}}
-                {{-- <li class="side-nav-item">
-                    <a data-bs-toggle="collapse" href="#sidebarProperty" aria-expanded="false"
-                        aria-controls="sidebarEcommerce" class="side-nav-link">
-                        <i class="uil-store"></i>
-                        <span> Property Details </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                    <div class="collapse" id="sidebarProperty">
-                        <ul class="side-nav-second-level">
-
-
-                            <li>
-                                <a href="{{ route('property.view') }}">Add New Property</a>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <div class="collapse" id="sidebarProperty">
-                        <ul class="side-nav-second-level">
-
-
-                            <li>
-                                <a href="{{ route('property.list') }}">Property List</a>
-                            </li>
-
-                        </ul>
-                    </div> --}}
-
-                    {{-- CATEGORY SECTION --}}
-                {{-- <li class="side-nav-item">
-                    <a data-bs-toggle="collapse" href="#sidebarCategory" aria-expanded="false"
-                        aria-controls="sidebarEcommerce" class="side-nav-link">
-                        <i class="uil-store"></i>
-                        <span> Category </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                    <div class="collapse" id="sidebarCategory">
-                        <ul class="side-nav-second-level">
-
-
-                            <li>
-                                <a href="{{ route('category.view') }}">Add New Category</a>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <div class="collapse" id="sidebarCategory">
-                        <ul class="side-nav-second-level">
-
-
-                            <li>
-                                <a href="{{ route('category.list') }}">Category list</a>
-                            </li>
-
-                        </ul>
-                    </div> --}}
-
-                    {{-- 
-                        Settings section --}}
-
-                {{-- <li class="side-nav-item">
-                    <a data-bs-toggle="collapse" href="#sidebarSettings" aria-expanded="false"
-                        aria-controls="sidebarEcommerce" class="side-nav-link">
-                        <i class="uil-store"></i>
-                        <span> Settings </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                  
-
-
-                    <div class="collapse" id="sidebarSettings">
-                        <ul class="side-nav-second-level">
-
-
-                            <li>
-                                <a href="{{ route('settings.settingsView') }}">Settings View</a>
-                            </li>
-
-                        </ul>
-                    </div> --}}
-                    {{-- AGENTS SECTION --}}
-                {{-- <li class="side-nav-item">
-                    <a data-bs-toggle="collapse" href="#sidebarAgent" aria-expanded="false"
-                        aria-controls="sidebarEcommerce" class="side-nav-link">
-                        <i class="uil-store"></i>
-                        <span> Agent Details </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                    <div class="collapse" id="sidebarAgent">
-                        <ul class="side-nav-second-level">
-
-
-                            <li>
-                                <a href="{{ route('agent.view') }}">Add New agent</a>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <div class="collapse" id="sidebarAgent">
-                        <ul class="side-nav-second-level">
-
-
-                            <li>
-                                <a href="{{ route('agent.list') }}">Agent List</a>
-                            </li>
-
-                        </ul>
-                    </div> --}}
-                    {{-- testimonial section --}}
-                    {{-- <li class="side-nav-item">
-                        <a data-bs-toggle="collapse" href="#sidebarTestimonial" aria-expanded="false"
-                            aria-controls="sidebarEcommerce" class="side-nav-link">
-                            <i class="uil-store"></i>
-                            <span> Testimonial Details </span>
-                            <span class="menu-arrow"></span>
-                        </a>
-                        <div class="collapse" id="sidebarTestimonial">
-                            <ul class="side-nav-second-level">
-    
-    
-                                <li>
-                                    <a href="{{ route('testimonial.view') }}">Add New Testimonial</a>
-                                </li>
-    
-                            </ul>
-                        </div>
-                        <div class="collapse" id="sidebarAgent">
-                            <ul class="side-nav-second-level">
-    
-    
-                                <li>
-                                    <a href="{{ route('testimonial.list') }}">Testimonials List</a>
-                                </li>
-    
-                            </ul>
-                        </div> --}}
-
-
-
-                    {{-- FAQ section --}}
-                {{-- <li class="side-nav-item">
-                    <a data-bs-toggle="collapse" href="#sidebarFAQ" aria-expanded="false"
-                        aria-controls="sidebarEcommerce" class="side-nav-link">
-                        <i class="uil-store"></i>
-                        <span> FAQ </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                    <div class="collapse" id="sidebarFAQ">
-                        <ul class="side-nav-second-level">
-
-
-                            <li>
-                                <a href="{{ route('faq.view') }}">FAQ View</a>
-                            </li>
-
-                        </ul>
-                    </div> --}}
-
-
-
-                    <!-- end Help Box -->
-                    <!-- End Sidebar -->
-
-                    <div class="clearfix"></div>
-
-            </div>
-            <!-- Sidebar -left -->
-
-        </div>
         <!-- Left Sidebar End -->
 
         <!-- ============================================================== -->

@@ -47,13 +47,22 @@
                 </ul>
             </div>
             <div class="col-lg-8 mb-30">
-                <form action="#" class="coment-form">
+                <form action="{{route('contact.post')}}" class="coment-form" method="POST">
+                    {{-- @method('POST') --}}
+                     @csrf
                     <h5 class="comnt-input-title text-dark">Leave a comment</h5>
-                    <input class="input-feild" type="text" placeholder="Your name">                             
-                    <input class="input-feild mail-field" type="email" placeholder="Your mail">
-                    <textarea name="msg-box" id="input_Comnt" cols="30" rows="10" placeholder="Your Comment"></textarea>
+
+                    {{-- <form action="{{route('contact.post')}}" method="post" enctype="multipart/form-data">
+                        @method('POST')
+                        @csrf --}}
+
+                     
+                    <input class="input-feild" type="text" name="name" placeholder="Your name">                             
+                    <input class="input-feild mail-field" name="email" type="email" placeholder="Your mail">
+                    <textarea id="input_Comnt" cols="30" rows="10" name="comments" placeholder="Your Comment"></textarea>
                     <div class="coment-btns">
-                        <button type="button" class="send-btn">Send</button>
+                        <button type="submit"  class="theme-btn">Send</button>
+                        {{-- <button type="button" class="send-btn">Send</button> --}}
                         <button type="button" class="clear-btn">Clear</button>
                     </div>                         
                 </form>

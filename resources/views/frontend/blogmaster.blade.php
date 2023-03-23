@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real Home/ Blog-list</title>
     <link rel="stylesheet" href="{{asset('frontend')}}/css/bootstrap.min.css">
-     <!-- <link rel="stylesheet" href="assets/css/slick-theme.css"> -->
     <link rel="stylesheet" href="{{asset('frontend')}}/css/odometer-theme-default.css">
     <link rel="stylesheet" href="{{asset('frontend')}}/css/slick.css">
     <link rel="stylesheet" href="{{asset('frontend')}}/css/font-awesome.min.css">
@@ -42,17 +41,17 @@
                                             <li><a href="blog-post.html">Blog Post</a></li>
                                         </ul> --}}
                                     </li>
-                                    <li><a href="{{route('contact.get')}}">Contacts</a></li>
+                                    <li><a href="{{route('contact.view')}}">Contacts</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-4">
                         <ul class="social">
-                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+                            <li><a href="{{ getFacebookLink() }}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="{{ getYoutubeLink()}}"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
                             <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                            <li><a href="{{ getEmailLink()}}"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -76,9 +75,9 @@
                     </div>
                     <ul class="social footer-social">
                         <li><a href="{{ getFacebookLink() }}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ getYoutubeLink()}}"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ getEmailLink()}}"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-3 col-12 mb-30">
@@ -110,8 +109,10 @@
                         <h5>Contact us</h5>
                     </div>
                     <ul class="footer-widget footer-contact">
-                        <li>{{ dd(getSettingsData(['facebook','youtube'])) }}</li>
-                        <li>Freephone: +1 800 559 6580</li>                     
+                        @foreach ( getSettingsData(['facebook','youtube','email','freephones']) as $settings_data )
+                        <li>{{$settings_data}}</li> 
+                        @endforeach
+                                      
                         <li>Telephone: +1 959 603 6035</li>                     
                         <li>FAX: +1 800 559 6580</li>                     
                         <li class="mail">info@realhome.com</li>                     

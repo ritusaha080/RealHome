@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\property;
 use App\Models\settings;
 
     function getSettingsData($input = null)
@@ -25,8 +26,25 @@ use App\Models\settings;
     }
     function getYoutubeLink()
     {
-        $item = Settings::where('name','youtube')->first();
+        $item = Settings::where('name', 'youtube')->first();
 
         return empty($item) ? '' : $item->value;
+    }
+    function getEmailLink()
+    {
+        $item = Settings::where('name', 'email')->first();
+
+        return empty($item) ? '' : $item->value;
+    }
+    function getAboutLink()
+    {
+        $item = Settings::where('name', 'about_us')->first();
+
+        return empty($item) ? '' : $item->value;
+    }
+    function getPropertyByCategoryId($id) {
+        $items = property::doesntHave('payment')->where('category_id', $id)->get();
+
+        return $items;
     }
 ?>
