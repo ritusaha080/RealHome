@@ -55,8 +55,10 @@ $('.testimoni-wrapper').slick({
 $('.brand-active').slick({
   slidesToShow: 4,
   slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 1000,
   arrows: false,
-  dots: false,
+  dots: true,
   responsive: [
     {
       breakpoint: 1024,

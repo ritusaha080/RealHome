@@ -75,7 +75,7 @@
                         <img src="{{asset('frontend')}}/images/footerlogo.png" alt="">
                     </div>
                     <ul class="social footer-social">
-                        <li><a href="{{ getFacebookLink() }}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="{{getFacebookLink()}}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
@@ -110,7 +110,7 @@
                         <h5>Contact us</h5>
                     </div>
                     <ul class="footer-widget footer-contact">
-                        <li>{{ dd(getSettingsData(['facebook','youtube'])) }}</li>
+                        <li>facebook</li>
                         <li>Freephone: +1 800 559 6580</li>                     
                         <li>Telephone: +1 959 603 6035</li>                     
                         <li>FAX: +1 800 559 6580</li>                     
@@ -126,6 +126,6 @@
 
     <script src="{{asset('frontend')}}/js/bootstrap.bundle.min.js"></script>
     <script src="{{asset('frontend')}}/js/jquery-plugin-collection.js"></script>
-   <script src="{{asset('frontend')}}/js/script.js"></script>
+    <script src="{{asset('frontend')}}/js/script.js"></script>
 </body>
 </html>
