@@ -16,7 +16,7 @@
                 <div class="single-property sale-propety">
                     <img src="{{asset('storage/post-image/'.$property->image)}}" alt=">
                     <div class="sale-property-details">
-                         <span>{{ $payments->properties->property_id}}</span>
+{{--                         <span>{{ $payments->properties->property_id}}</span>--}}
                     <h5>{{$property->title}}</h5>
                             <p>Illinois / Chicago</p>
                             <span>$34,000</span>

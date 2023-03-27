@@ -14,12 +14,14 @@ class PaymentController extends Controller
     public function paymentShow($id){
 
        // dd($id);
-        $property=property::find($id);
+        $property=property::with('payment')->find($id);
         //dd($property);
         $data= property::all();
+        //$payments=payment::with('property')->get();
         $input= User::all();
+        //dd($payments);
 
-        return view('frontend.index.payment',compact('property'));
+        return view('frontend.index.payment',compact('property',));
     }
 
     public function paymentPost(Request $request){
