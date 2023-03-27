@@ -1,6 +1,6 @@
 
 
-// offer section start 
+// offer section start
 .offer-title {
     text-align: end;
     padding-bottom: 30px;
@@ -32,9 +32,9 @@
         line-height: 27px;
     }
 }
-// offer section end 
+// offer section end
 
-// service section start 
+// service section start
 .service-section {
     background: $primary-bg;
 }
@@ -57,7 +57,7 @@
     }
 }
 
-// property area start 
+// property area start
 .property-area {
     background: $secondary-bg;
 }
@@ -74,6 +74,9 @@
     margin-bottom: 30px;
     a{
         img {
+            max-height: 230px;
+            height: 100%;
+            object-fit: cover;
             @media (max-width: 768px) {
                 width: 100%;
             }
@@ -111,10 +114,10 @@
         }
     }
 }
-// property area end 
+// property area end
 
 
-// agent area css start 
+// agent area css start
 .agents-wrapper {
     .slick-dots {
         display: flex;
@@ -131,11 +134,11 @@
         }
         @media (max-width: 768px) {
             top: 101%;
-            left: 51%; 
+            left: 51%;
         }
         @media (max-width: 584px) {
             top: 105%;
-            left: 80%; 
+            left: 80%;
         }
         button {
             font-size: 0px;
@@ -152,7 +155,7 @@
                 border: 2px solid $theme-color;
             }
         }
-    }    
+    }
 }
 .agetn-title {
     h3 {
@@ -215,9 +218,9 @@
         }
     }
 }
-// agent area css end  
+// agent area css end
 
-// more about us section start 
+// more about us section start
 .more-about {
     padding: 50px 0;
     background: $body-bg;
@@ -242,9 +245,9 @@
         }
     }
 }
-// more about us section end 
+// more about us section end
 
-//testimon area start 
+//testimon area start
 .testimoni-wrapper {
     .slick-arrow{
         position: absolute;
@@ -331,9 +334,9 @@
     }
 }
 
-//testimon area end 
+//testimon area end
 
-// partner section start 
+// partner section start
 .brand-area {
     h5 {
         display: none;
@@ -345,7 +348,7 @@
         img {
             margin: auto;
         }
-    }    
+    }
     .slick-dots {
         display: flex;
         position: absolute;

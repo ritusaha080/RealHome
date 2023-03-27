@@ -338,9 +338,6 @@ img {
   line-height: 28px;
   transition: 0.3s;
 }
-.menu li a.menu-active {
-  color: #e2574c;
-}
 @media (max-width: 1200px) {
   .menu li a {
     font-size: 15px;
@@ -664,6 +661,12 @@ img {
   text-align: center;
   background: #fff;
   margin-bottom: 30px;
+}
+.single-property a img {
+  max-height: 230px;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (max-width: 768px) {
   .single-property a img {
