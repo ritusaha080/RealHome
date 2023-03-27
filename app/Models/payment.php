@@ -11,11 +11,11 @@ class payment extends Model
     protected $fillable = [
         'user_id','property_id','card_number','cardholder_name','expired_date','cug_number'
     ];
-    
+
     public function property (){
-        return $this->belongsTo(property::class); 
+        return $this->belongsTo(property::class, 'property_id');
     }
     public function users (){
-        return $this->belongsTo(User::class); 
+        return $this->belongsTo(User::class);
     }
 }

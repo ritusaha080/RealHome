@@ -6,14 +6,14 @@
   <!-- property section start  -->
   <section class="property-area section-padding">
     <div class="container">
-        <div class="row">    
+        <div class="row">
             <ul class="camp-link justify-content-center">
                 <li><a href="index.html">Home</a></li>
                 <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
                 <li>Property</li>
             </ul>
             <div class="section-title text-center mb-70">
-                <h3>Property <span>Catalog</span></h3>                        
+                <h3>Property <span>Catalog</span></h3>
             </div>
             <div class="row">
                 <ul class="nav">
@@ -33,19 +33,17 @@
                                 <div class="single-property">
                                     <a href="#">
                                         <img src="{{ asset('storage/post-image/' . $property->image) }}">
-                                        <h5>{{ $property->title }}</h5>
+                                        <h5><a href="{{ route('property.details.show', $property->id) }}">{{ $property->title }}</a></h5>
                                         <p>{{ $property->description }}</p>
                                         <span>{{ $property->price }}</span>
                                         <ul class="property-details">
-                                            <li>3400 Sq Ft</li>
-                                            <li>2 Bedrooms</li>
-                                            <li>1 Bathroom</li>
+
                                         </ul>
                                     </a>
                                 </div>
                             </div>
                             @endforeach
-                            
+
                         </div>
                     </div>
                     @endforeach
@@ -188,7 +186,7 @@
                             </div>
                         </div>
                     </div> --}}
-                    
+
                 </div>
             </div>
         </div>

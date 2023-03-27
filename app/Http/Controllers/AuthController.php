@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Enums\RoleEnum;
+use App\Http\Requests\RegisterRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -20,7 +21,7 @@ class AuthController extends Controller
         return view('admin.register');
     }
 
-    public function signUp(Request $request){
+    public function signUp(RegisterRequest $request){
         $user = User::where('email',$request->get('email')) -> first();
         if($user){
             return to_route('signup')->with('error', 'user already exists');
@@ -46,7 +47,7 @@ class AuthController extends Controller
         if(Auth::user()->role == RoleEnum::ADMIN){
             return redirect()->route('admin.dashboard');
         }
-        return redirect()->route('homepage.get');
+        return redirect()->route('user.dashboard');
     }
     public function logout(): \Illuminate\Http\RedirectResponse
     {

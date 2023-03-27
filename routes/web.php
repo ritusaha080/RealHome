@@ -149,6 +149,8 @@ Route::get('/property/details/show/{id}',[HomepageController::class,'propertySho
 
 //purchased property
 Route::get('/purchased/property',[HomepageController::class,'purchasedProperty'])->name('purchased.property');
+Route::get('/purchased/property-view',[HomepageController::class,'purchasedPropertyview'])->name('purchased.property.view');
+
 
 //property buy
 Route::get('property-buy/{id}',[PaymentController::class,'propertyBuy'])->name('property.buy');

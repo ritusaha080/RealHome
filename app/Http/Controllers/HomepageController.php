@@ -11,6 +11,7 @@ use App\Models\testimonials;
 use App\Models\partners;
 use App\Models\payment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
 
@@ -48,7 +49,7 @@ class HomepageController extends Controller
     public function purchasedProperty(Request $request ){
 
         $purchasedproperty=property::doesntHave('payment')->get();
-        dd($purchasedproperty);
+       // dd($purchasedproperty);
 
         return view('frontend.index.property',compact('purchasedproperty'));
     }
@@ -69,6 +70,16 @@ class HomepageController extends Controller
         $blogs = blog::find($id);
 
         return view('frontend.blog.blogdetails',compact('blogs'));
+    }
+
+
+    //purchased property view
+    public function purchasedPropertyview(Request $request){
+//        $properties = property::with(['category'])->latest()->get();
+        $properties = payment::where('user_id', Auth::id())->with('property.category')->get();
+//       dd($property);
+
+        return view('users.purchased-property-list',compact('properties'));
     }
 
 

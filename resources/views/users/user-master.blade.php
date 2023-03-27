@@ -59,76 +59,50 @@
                         <!-- Add icons to the links using the .nav-icon class
                                with font-awesome or any other icon font library -->
                         <li class="nav-item">
-                            <a href="{{ route('admin.dashboard') }}" class="nav-link">
+                            <a href="{{ route('user.dashboard') }}" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer"></i>
                                 <p>
                                     Dashboard
                                 </p>
                             </a>
                         </li>
-                     
+
                     </ul>
                 </nav>
 
-                <li class="side-nav-item">
-                    <a data-bs-toggle="collapse" href="#sidebarBlog" aria-expanded="false"
-                        aria-controls="sidebarEcommerce" class="side-nav-link">
-                        <i class="uil-store"></i>
-                        <span> Blog </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                    <div class="collapse" id="sidebarBlog">
-                        <ul class="side-nav-second-level">
 
-
-                            <li>
-                                <a href="{{ route('post.list.all') }}">All Blogs</a>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <div class="collapse" id="sidebarBlog">
-                        <ul class="side-nav-second-level">
-
-
-                            <li>
-                                <a href="{{ route('admin.add.newblog') }}">Add new Blog</a>
-                            </li>
-
-                        </ul>
-                    </div>
-
-
+{{--
                     {{-- PROPERTY SECTION --}}
+
+
                 <li class="side-nav-item">
-                    <a data-bs-toggle="collapse" href="#sidebarProperty" aria-expanded="false"
-                        aria-controls="sidebarEcommerce" class="side-nav-link">
+                <li class="side-nav-item">
+                    <a data-bs-toggle="collapse" href="#adminPurchasedproperty" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
                         <i class="uil-store"></i>
-                        <span> Purchased Property list </span>
+                        <span> Purchased Property </span>
                         <span class="menu-arrow"></span>
                     </a>
-                    <div class="collapse" id="sidebarProperty">
-                        <ul class="side-nav-second-level">
+{{--                    <div class="collapse" id="adminPurchasedproperty">--}}
+{{--                        <ul class="side-nav-second-level">--}}
+{{--                            <li>--}}
+{{--                                <a href="{{ route('purchased.property.view') }}">Purchased Property list</a>--}}
+{{--                            </li>--}}
+
+{{--                        </ul>--}}
+{{--                    </div>--}}
+                </li>
 
 
-                            <li>
-                                <a href="{{ route('property.view') }}"> Property list</a>
-                            </li>
-
-                        </ul>
-                    </div>
-                   
-
-                    {{-- CATEGORY SECTION --}}
-             
-                   
+                {{-- CATEGORY SECTION --}}
 
 
-                  
+
+
+
                     {{-- AGENTS SECTION --}}
-                
+
                     {{-- FAQ section --}}
-                
+
 
                     <!-- end Help Box -->
                     <!-- End Sidebar -->
@@ -144,6 +118,37 @@
         <!-- ============================================================== -->
         <!-- Start Page Content here -->
         <!-- ============================================================== -->
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col">
+                @if (\Illuminate\Support\Facades\Session::has('success'))
+                    <div class="alert alert-success">
+                        {{ \Illuminate\Support\Facades\Session::get('success') }}
+                    </div>
+                @endif
+                @if (\Illuminate\Support\Facades\Session::has('posted'))
+                    <div class="alert alert-success">
+                        {{ \Illuminate\Support\Facades\Session::get('posted') }}
+
+                    </div>
+                @endif
+                @if (\Illuminate\Support\Facades\Session::has('edited'))
+                    <div class="alert alert-success">
+                        {{ \Illuminate\Support\Facades\Session::get('edited') }}
+
+                    </div>
+                @endif
+
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+
+
+
 
         <div class="content-page">
             <div class="content">

@@ -40,7 +40,7 @@ class PaymentController extends Controller
 
 
         if($payments){
-           return to_route('homepage.get')->with('success','payment done Successful');
+           return to_route('purchased.property.view',['id'=>$payments->id])->with('posted','payment done Successful');
 
         }else{
             return Redirect::back();
@@ -48,8 +48,8 @@ class PaymentController extends Controller
 
     }
     public function paymentList(){
-        $payments=payment::with(['property'])->latest()->get();
-        $payments=payment::with(['users'])->latest()->get();
+       // $payments=payment::with(['property'])->latest()->get();
+        $payments=payment::with(['users','property'])->latest()->get();
         //dd($blogs);
         return view('frontend.index.paymentlist',compact('payments'));
     }

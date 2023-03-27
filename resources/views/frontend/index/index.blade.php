@@ -165,7 +165,7 @@
                     </div>
                     @endforeach
                     <div class="more-property mt-20">
-                        <a href="#" class="theme-btn">ALL PROPERTIES</a>
+                        <a href="{{ route('property.get') }}" class="theme-btn">ALL PROPERTIES</a>
                     </div>
 
             </div>
