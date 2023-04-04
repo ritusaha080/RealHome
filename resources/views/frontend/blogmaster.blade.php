@@ -24,7 +24,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-2">
                         <div class="logo">
-                            <a href="index.html"><img src="{{asset('frontend')}}/images/logo.png" alt="Logo"></a>
+                            <a href="{{route('homepage.get')}}"><img src="{{asset('frontend')}}/images/logo.png" alt="Logo"></a>
                         </div>
                     </div>
                     <div class="col-lg-7 col-md-8 col-8">
@@ -49,8 +49,8 @@
                     <div class="col-lg-3 col-md-4 col-4">
                         <ul class="social">
                             <li><a href="{{ getFacebookLink() }}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="{{ getYoutubeLink()}}"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="{{ getYoutubeLink()}}"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                            <li><a href="{{getInstagramLink()}}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                             <li><a href="{{ getEmailLink()}}"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
@@ -74,10 +74,12 @@
                         <img src="{{asset('frontend')}}/images/footerlogo.png" alt="">
                     </div>
                     <ul class="social footer-social">
-                        <li><a href="{{ getFacebookLink() }}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="{{ getYoutubeLink()}}"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+{{--                        @dd(getSettingsData('facebook'))--}}
 
-                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ getSettingsData('facebook')['facebook'] }}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="{{ getSettingsData('youtube')['youtube']}}"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+
+                        <li><a href="{{getInstagramLink()}}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                         <li><a href="{{ getEmailLink()}}"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
@@ -86,12 +88,12 @@
                         <h5>Navigation</h5>
                     </div>
                     <ul class="footer-widget">
-                        <li><a href="index.html">Home</a> </li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="property.html">Property</a></li>
-                        <li><a href="#">Gallary</a></li>
-                        <li><a href="blog.html">Our Blog</a></li>
-                        <li><a href="contact.html">Contacts</a></li>
+                        <li><a href="{{route('homepage.get')}}">Home</a> </li>
+                        <li><a href="{{route('about.get')}}">About Us</a></li>
+                        <li><a href="{{route('property.get')}}">Property</a></li>
+
+                        <li><a href="{{route('frontend.post')}}">Our Blog</a></li>
+                        <li><a href="{{route('contact.view')}}">Contacts</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-3 col-12 mb-30">
@@ -99,10 +101,8 @@
                         <h5>For Clients</h5>
                     </div>
                     <ul class="footer-widget">
-                        <li><a href="#">Sign in</a></li>
-                        <li><a href="#">Forum</a></li>
-                        <li><a href="#">Promotions</a></li>
-                        <li><a href="#">News</a></li>
+                        <li><a href="{{route('login')}}">Sign in</a></li>
+
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-3 col-12 mb-30">
@@ -113,9 +113,9 @@
                         @foreach ( getSettingsData(['facebook','youtube','email','freephones']) as $settings_data )
                         <li>{{$settings_data}}</li>
                         @endforeach
-                        <li>Telephone: +1 959 603 6035</li>
-                        <li>FAX: +1 800 559 6580</li>
-                        <li class="mail">info@realhome.com</li>
+{{--                        <li>Telephone: +1 959 603 6035</li>--}}
+{{--                        <li>FAX: +1 800 559 6580</li>--}}
+{{--                        <li class="mail">info@realhome.com</li>--}}
                     </ul>
                 </div>
             </div>

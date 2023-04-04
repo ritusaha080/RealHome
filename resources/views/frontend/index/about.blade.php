@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <ul class="camp-link">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="{{route('homepage.get')}}">Home</a></li>
                     <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
                     <li>About</li>
                 </ul>
@@ -34,34 +34,15 @@
         <section class="service-section about-service section-padding">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single-service">
-                            <i class="fa fa-globe" aria-hidden="true"></i>
-                            <h4>Whole World</h4>
-                            <p>Proin umcorper urna et felisstibulum iaculis lacinia est. Proin dictum elem entum velit fusce euismod. Aenean commodo ligula eget dolor.</p>
+                    @foreach ($services as $service)
+                        <div class="col-lg-3 col-md-6">
+                            <div class="single-service">
+                                <i class="fa fa-globe" aria-hidden="true"></i>
+                                <h4>{{$service->name}}</h4>
+                                <p>{{$service->description}}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single-service">
-                            <i class="fa fa-suitcase" aria-hidden="true"></i>
-                            <h4>Confidentially</h4>
-                            <p>Proin umcorper urna et felisstibulum iaculis lacinia est. Proin dictum elem entum velit fusce euismod. Aenean commodo ligula eget dolor.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single-service">
-                            <i class="fa fa-file-image-o" aria-hidden="true"></i>
-                            <h4>Good Previews</h4>
-                            <p>Proin umcorper urna et felisstibulum iaculis lacinia est. Proin dictum elem entum velit fusce euismod. Aenean commodo ligula eget dolor.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single-service">
-                            <i class="fa fa-briefcase" aria-hidden="true"></i>
-                            <h4>Confidentially</h4>
-                            <p>Proin umcorper urna et felisstibulum iaculis lacinia est. Proin dictum elem entum velit fusce euismod. Aenean commodo ligula eget dolor.</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -157,7 +138,7 @@
                 <div class="more-about">
                     <h2>Get Started on Buying Your <span>New Home</span></h2>
                     <div class="more-property">
-                        <a href="#" class="theme-btn">MORE ABOUT US</a>
+                        <a href="{{route('about.get')}}" class="theme-btn">MORE ABOUT US</a>
                     </div>
                 </div>
             </div>
@@ -174,26 +155,18 @@
                 <img src="{{asset('frontend')}}/images/partner/00.png" alt="">
             </div>
             <div class="col-9">
-                <div class="brand-active">
-                    <div class="brand-img">
-                        <img src="{{asset('frontend')}}/images/partner/01.png" alt="">
+                <div class="col-9">
+
+                    <div class="brand-active">
+                        @foreach($partners as $partner)
+
+                            <div class="brand-img">
+                                <img src="{{ asset('storage/post-image/' . $partner->logo) }}" alt=""
+                                     style="height:100px;width:auto;">
+                            </div>
+                        @endforeach
+
                     </div>
-                    <div class="brand-img">
-                        <img src="{{asset('frontend')}}/images/partner/02.png" alt="">
-                    </div>
-                    <div class="brand-img">
-                        <img src="{{asset('frontend')}}/images/partner/03.png" alt="">
-                    </div>
-                    <div class="brand-img">
-                        <img src="{{asset('frontend')}}/images/partner/04.png" alt="">
-                    </div>
-                    <div class="brand-img">
-                        <img src="{{asset('frontend')}}/images/partner/01.png" alt="">
-                    </div>
-                    <div class="brand-img">
-                        <img src="{{asset('frontend')}}/images/partner/02.png" alt="">
-                    </div>
-                </div>
             </div>
         </div>
         </div>

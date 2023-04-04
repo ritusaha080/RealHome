@@ -12,34 +12,10 @@ use Illuminate\Http\Request;
 
 class PostSettingsController extends Controller
 {
-    public function settings(){
-        
-        return view('admin.settings.settings');
-    }
-    public function postSettings(Request $request){
-        //dd($settings = Settings::where('name')->first());
-        
-        $settings = Settings::create([
-            'name'=>$request->get('name'),
-            'value'=>$request->get('value'),
-        ]);
-        
-
-
-        if($settings){
-            return to_route('settings.list')->with('posted','Data Entry Successfull');
-
-        }else{
-            return Redirect::back();
-        }
-
-    }
-    public function settingsList(){
-        $settings= DB::table('settings')->latest()->get();
-        //dd($categories);
-        return view('admin.settings.settingslist',compact('settings'));
-    }
-
+//    public function settings(){
+//
+//        return view('admin.settings.settings');
+//    }
 
     public function settingsView()
     {
@@ -50,14 +26,38 @@ class PostSettingsController extends Controller
 
     public function settingsSave(Request $request)
     {
+        // dd($request->all());
         $data = $request->except(['_method', '_token']);
-        foreach($data as $key => $value) {
-            Settings::updateOrCreate(['name' => $key], ['value' => $value]);
+
+        foreach ($data as $key => $value) {
+
+            if ($key === 'logo') {
+
+                if ($request->hasFile('logo')) {
+                    $logo= Settings::where('name','=','logo')->pluck('value');
+                    //dd($logo);
+                    Storage::delete('/public/logo/' . $logo[0]);
+                    $name = time() . '.' . $request->file('logo')->getClientOriginalExtension();
+                    $image = Storage::put('/public/logo/' . $name, file_get_contents($request->file('logo')));
+                    $createSetting = Settings::updateOrCreate([
+                        'name' => $key,
+                    ], [
+                        'value' => $name,
+                    ]);
+                }
+            } else {
+                $createSetting = Settings::updateOrCreate([
+                    'name' => $key,
+                ], [
+                    'value' => $value,
+                ]);
+            }
+
         }
 
-        return to_route('settings.settingsView')->with('posted','Data Entry Successfull');
-    }
+            return to_route('settings.settingsView')->with('posted', 'Data Entry Successful');
+        }
 
-    
-    
+
+
 }

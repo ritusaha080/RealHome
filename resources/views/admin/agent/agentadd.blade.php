@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('admin.content')
- 
+
  <div class="container float-right">
   <div class="card">
       <div class="card-header">
@@ -15,11 +15,11 @@
         @endif
 
 
-        
+
 <form action="{{route('agent.add')}}" method="post" enctype="multipart/form-data">
   @method('POST')
   @csrf
- 
+
 
 
   <div class="card-body">
@@ -53,18 +53,22 @@
       <label for="exampleInputtitle">Phone Number</label>
       <input name="phone" type="title" class="form-control" id="phone" placeholder="Enter agent's phone number">
     </div>
+      @error('phone')
+      <span class="text-danger">{{$message}}</span>
+      @enderror
 
           <div class="form-group">
             <label for="exampleInputFile">Agent's image </label>
             <div class="input-group">
               <div class="custom-file">
                 <input type="file" name="image" class="form-control" id="exampleInputFile">
-                
+
               </div>
+
+          </div>
               @error('image')
               <span class="text-danger">{{$message}}</span>
-            @enderror
-          </div>
+              @enderror
 
   <!-- /.card-body -->
 
@@ -72,4 +76,4 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </div>
 </form>
-  @endsection 
+  @endsection

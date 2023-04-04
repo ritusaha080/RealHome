@@ -5,7 +5,7 @@ use App\Models\agent;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\AgentRequest as RequestsPostRequest;
 use Illuminate\Support\Facades\Storage;
 
 class AgentController extends Controller
@@ -13,7 +13,7 @@ class AgentController extends Controller
     public function agentView(){
         return view('admin.agent.agentadd');
     }
-    public function agentAdd(Request $request){
+    public function agentAdd(RequestsPostRequest $request){
        //dd($request->all());
        $name = null;
        if($request->hasFile('image')){
@@ -26,9 +26,9 @@ class AgentController extends Controller
             'description'=>$request->get('description'),
             'phone'=>$request->get('phone'),
             'image'=>$name
-            
+
         ]);
-        
+
         if($agents){
             return to_route('agent.list')->with('posted','Data Entry Successfull');
 

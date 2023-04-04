@@ -6,7 +6,7 @@ use App\Models\User;
 use App\Models\payment;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
+use App\Http\Requests\PaymentRequest as RequestsPostRequest;
 use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
@@ -24,7 +24,7 @@ class PaymentController extends Controller
         return view('frontend.index.payment',compact('property',));
     }
 
-    public function paymentPost(Request $request){
+    public function paymentPost(RequestsPostRequest $request){
 
        // dd(Auth::id());
     //   dd($request->all());

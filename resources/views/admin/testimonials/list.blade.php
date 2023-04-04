@@ -22,7 +22,7 @@
 
                 </div>
             @endif
-            
+
         </div>
         <div class="col">
 
@@ -56,19 +56,38 @@
                                 <th>title</th>
                                 <th>description</th>
                                 <th>images</th>
-                        
+                                <th>operation</th>
+
+
                             </tr>
                         </thead>
                         <tbody>
                             <@foreach ($testimonials as $testimonial)
                                 <tr>
                                     <td>{{ $testimonial->id }}</td>
-                                   
+
                                     <td>{{ $testimonial->title }}</td>
                                     <td>{{\Illuminate\Support\Str::limit($testimonial->description,10,"...")}}</td>
                                     <td>
                                         <img src="{{ asset('storage/post-image/' . $testimonial->images) }}" alt=""
                                             style="height:100px;width:auto;">
+                                    </td>
+
+                                    <td>
+                                        <div class="row">
+                                            <div class="col">
+                                                <a href="{{ route('test.edit', $testimonial->id) }}" type="submit"
+                                                   class="btn btn-warning">Edit</a>
+                                            </div>
+                                            <div class="col">
+                                                <form action={{ route('test.delete') }} method="POST">
+                                                    @csrf
+                                                    <input type="hidden" value={{ $testimonial->id }} name="id">
+                                                    <input type="submit" value="Delete" class="btn btn-danger">
+                                                </form>
+                                            </div>
+                                        </div>
+
                                     </td>
 
                                 </tr>
@@ -81,7 +100,7 @@
                                 <!-- AdminLTE App -->
                                 <script src="{{ asset('assets') }}/dist/js/adminlte.min.js"></script>
                                 <!-- AdminLTE for demo purposes -->
-                                {{-- <script src="{{asset('assets')}}/dist/js/demo.js"></script> --}}
+
                                 </body>
 
                                 </html>

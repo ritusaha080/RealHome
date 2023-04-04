@@ -78,12 +78,7 @@
                 </div>
                 <div class="col-lg-8 col-md-8">
                     <div class="offer-details">
-                        <p>Quisque diam lorem interdum vitaapibus ac scelerisque vitae pede. Donec eget tellus non erat
-                            lacinia fertum. Donec in velit vel ipsum auctovinar. Proin umcorper urna et felisstibulum
-                            iaculis lacinia est. Proin dictum elem entum velit fusce euismod. Aenean commodo ligula eget
-                            dolor. Aenean massa. Lorem ipsum dolor sit amet, consec tetuer adipis elit, aliquam eget nibh
-                            etlibura. Lorem ipsum dolor sitamet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt ut labore et.</p>
+                        <p>{{$settings['We_are_offering']}} </p>
                     </div>
                 </div>
             </div>
@@ -95,38 +90,40 @@
     <section class="service-section section-padding">
         <div class="container">
             <div class="row">
+
+                @foreach ($services as $service)
                 <div class="col-lg-3 col-md-6">
                     <div class="single-service">
                         <i class="fa fa-globe" aria-hidden="true"></i>
-                        <h4>Whole World</h4>
-                        <p>Proin umcorper urna et felisstibulum iaculis lacinia est. Proin dictum elem entum velit fusce
-                            euismod. Aenean commodo ligula eget dolor.</p>
+                        <h4>{{$service->name}}</h4>
+                        <p>{{$service->description}}</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-service">
-                        <i class="fa fa-suitcase" aria-hidden="true"></i>
-                        <h4>Confidentially</h4>
-                        <p>Proin umcorper urna et felisstibulum iaculis lacinia est. Proin dictum elem entum velit fusce
-                            euismod. Aenean commodo ligula eget dolor.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-service">
-                        <i class="fa fa-file-image-o" aria-hidden="true"></i>
-                        <h4>Good Previews</h4>
-                        <p>Proin umcorper urna et felisstibulum iaculis lacinia est. Proin dictum elem entum velit fusce
-                            euismod. Aenean commodo ligula eget dolor.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-service">
-                        <i class="fa fa-briefcase" aria-hidden="true"></i>
-                        <h4>Confidentially</h4>
-                        <p>Proin umcorper urna et felisstibulum iaculis lacinia est. Proin dictum elem entum velit fusce
-                            euismod. Aenean commodo ligula eget dolor.</p>
-                    </div>
-                </div>
+                @endforeach
+{{--                <div class="col-lg-3 col-md-6">--}}
+{{--                    <div class="single-service">--}}
+{{--                        <i class="fa fa-suitcase" aria-hidden="true"></i>--}}
+{{--                        <h4>Confidentially</h4>--}}
+{{--                        <p>Proin umcorper urna et felisstibulum iaculis lacinia est. Proin dictum elem entum velit fusce--}}
+{{--                            euismod. Aenean commodo ligula eget dolor.</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-3 col-md-6">--}}
+{{--                    <div class="single-service">--}}
+{{--                        <i class="fa fa-file-image-o" aria-hidden="true"></i>--}}
+{{--                        <h4>Good Previews</h4>--}}
+{{--                        <p>Proin umcorper urna et felisstibulum iaculis lacinia est. Proin dictum elem entum velit fusce--}}
+{{--                            euismod. Aenean commodo ligula eget dolor.</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-3 col-md-6">--}}
+{{--                    <div class="single-service">--}}
+{{--                        <i class="fa fa-briefcase" aria-hidden="true"></i>--}}
+{{--                        <h4>Confidentially</h4>--}}
+{{--                        <p>Proin umcorper urna et felisstibulum iaculis lacinia est. Proin dictum elem entum velit fusce--}}
+{{--                            euismod. Aenean commodo ligula eget dolor.</p>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
         </div>
     </section>
@@ -223,7 +220,7 @@
                 <div class="more-about">
                     <h2>Get Started on Buying Your <span>New Home</span></h2>
                     <div class="more-property">
-                        <a href="#" class="theme-btn">MORE ABOUT US</a>
+                        <a href="{{route('about.get')}}" class="theme-btn">MORE ABOUT US</a>
                     </div>
                 </div>
             </div>

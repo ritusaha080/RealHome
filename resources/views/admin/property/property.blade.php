@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('admin.content')
- 
+
  <div class="container float-right">
   <div class="card">
       <div class="card-header">
@@ -15,7 +15,7 @@
         @endif
 
 
-        
+
 <form action="{{route('property.post')}}" method="post" enctype="multipart/form-data">
   @method('POST')
   @csrf
@@ -47,12 +47,15 @@
                         @foreach ($data as $row )
                         <option value="{{$row->id}}">{{$row->category_name}}</option>
                         @endforeach
-                
+
                     </select>
+                    @error('category_id')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
                 </div> <!-- end col -->
 
-                
-            </div> <!-- end row -->                                           
+
+            </div> <!-- end row -->
         </div> <!-- end preview-->
 {{--     <!-- end tab-content--> --}}
 
@@ -82,23 +85,27 @@
         <div class="custom-file">
           <input type="file" name="image" class="form-control" id="exampleInputFile">
         </div>
+    </div>
         @error('image')
         <span class="text-danger">{{$message}}</span>
-      @enderror
-    </div>
+        @enderror
 
         <div class="form-group">
             <label for="exampleInputFile">Price</label>
             <div class="input-group">
               <div class="custom-file">
                 <input type="text" name="price" class="form-control" id="exampleInputText">
+                  @error('price')
+                  <span class="text-danger">{{$message}}</span>
+                  @enderror
               </div>
-       
+
+
         {{-- <div class="input-group-append">
           <span class="input-group-text">Upload</span>
         </div> --}}
-      
-     
+
+
     </div>
     <div class="form-check">
       <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -111,4 +118,4 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </div>
 </form>
-  @endsection 
+  @endsection

@@ -338,9 +338,6 @@ img {
   line-height: 28px;
   transition: 0.3s;
 }
-.menu li a.menu-active {
-  color: #e2574c;
-}
 @media (max-width: 1200px) {
   .menu li a {
     font-size: 15px;
@@ -1143,6 +1140,21 @@ img {
 .pagination-list li a.active {
   color: #222222;
   background: #f3f2f2;
+}
+
+.pagination-wrapper .pagination {
+  display: flex;
+  padding-top: 30px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.pagination-wrapper .pagination .page-item .page-link {
+  color: #3c3c3c;
+}
+.pagination-wrapper .pagination .page-item.active .page-link {
+  color: #fff;
+  background: #e2574c;
+  border-color: #e2574c;
 }
 
 .category-wrap {

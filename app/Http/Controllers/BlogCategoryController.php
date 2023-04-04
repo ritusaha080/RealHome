@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Pagination\Paginator;
 
 class BlogCategoryController extends Controller
 {
@@ -25,7 +25,7 @@ class BlogCategoryController extends Controller
     {
         return view('admin.blog.blog');
     }
-    
+
     public function Post(RequestsPostRequest $request){
         //dd($request->all());
         $name = null;
@@ -52,7 +52,7 @@ class BlogCategoryController extends Controller
 
     }
     public function show(){
-        $blogs= DB::table('blogs')->latest()->get();
+        $blogs= blog::latest()->paginate(3);
         //dd($blogs);
         return view('admin.blog.list',compact('blogs'));
     }
@@ -63,14 +63,14 @@ class BlogCategoryController extends Controller
 
     //Property section
 
-    
+
     /**
      * Show the form for creating a new resource.
      */
     //category
 
-    
-    
+
+
 
     public function delete_post(Request $request){
         $id = $request->get('id');

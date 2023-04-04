@@ -42,8 +42,28 @@ use App\Models\settings;
 
         return empty($item) ? '' : $item->value;
     }
+function getMoreAboutLink()
+{
+    $item = Settings::where('name', 'We_are_offering')->first();
+
+    return empty($item) ? '' : $item->value;
+}
+function getInstagramLink()
+{
+    $item = Settings::where('name', 'instagram')->first();
+
+    return empty($item) ? '' : $item->value;
+}
+
+
+function getAddressLink()
+{
+    $item = Settings::where('name', 'address')->first();
+
+    return empty($item) ? '' : $item->value;
+}
     function getPropertyByCategoryId($id) {
-        $items = property::doesntHave('payment')->where('category_id', $id)->get();
+        $items = property::doesntHave('payment')->where('category_id', $id)->paginate(2);
 
         return $items;
     }

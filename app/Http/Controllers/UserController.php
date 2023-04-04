@@ -12,8 +12,13 @@ class UserController extends Controller
     {
         $userData=payment::with('users')
             ->where('payments.user_id','=',Auth::id())->get();
+        $properties = payment::where('user_id', Auth::id())->with('property.category')->get();
+
         //return $userData;
-        return view('users.user-master');
+        if ($userData==null){
+            return to_route('user.dashboard')->with('success', 'No data found...');
+        }
+        return view('users.purchased-property-list',compact('userData','properties'));
     }
 
 }

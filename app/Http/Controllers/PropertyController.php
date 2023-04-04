@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Property;
-use App\Http\Requests\PostRequest as RequestsPostRequest;
+use App\Http\Requests\PropertyRequest as RequestsPostRequest;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 class PropertyController extends Controller
 {
     public function property(){
-        
+
         $data= Category::all();
         return view('admin.property.property',['data'=>$data]);
     }
@@ -46,7 +46,7 @@ class PropertyController extends Controller
 
     }
     public function PropertyList(){
-        $properties=property::with(['category'])->latest()->get();
+        $properties=property::with(['category'])->latest()->paginate(2);
         //dd($proterties);
         return view('admin.property.propertylist',compact('properties'));
     }

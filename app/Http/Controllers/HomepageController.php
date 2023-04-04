@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\OurService;
 use App\Models\Property;
 use App\Models\User;
 use App\Models\agent;
@@ -19,12 +20,15 @@ class HomepageController extends Controller
 {
     public function homePage(){
         $properties=property::doesntHave('payment')->limit(3)->get();
+
         //dd($properties);
+        $services=OurService::all();
         $agents=agent::all();
          //dd($agents);
+        $settings= getSettingsData('We_are_offering');
          $testimonials=testimonials::all();
          $partners=partners::all();
-        return view('frontend.index.index',compact('properties','agents','testimonials','partners'));
+        return view('frontend.index.index',compact('properties','agents','testimonials','partners','settings','services'));
 
     }
 
@@ -33,14 +37,16 @@ class HomepageController extends Controller
     public function about(){
 
         $settings= getSettingsData('AboutUs');
+        $services=OurService::all();
+        $partners=partners::all();
         $agents=agent::all();
 
-        return view('frontend.index.about', compact('settings','agents'));
+        return view('frontend.index.about', compact('settings','agents','services','partners'));
     }
     //property
     public function property(){
         $categories=category::get();
-        // $properties=property::groupBy('category_id')->get();
+//        $properties=Property::paginate(2);
         // dd($properties);
         return view('frontend.index.property',compact('categories'));
     }
@@ -61,7 +67,10 @@ class HomepageController extends Controller
            //property details show
     public function propertyShow($id){
         $properties = property::find($id);
-        $relatedProperties=property::inRandomOrder()->limit(3)->get();
+//        $categories=category::get();
+//
+        $relatedProperties=property::doesntHave('payment')->where('id','!=', $id)->where('category_id','=',$properties->category_id)->limit(3)->get();
+
         //dd($relatedProperties);
         return view('frontend.index.show-property-details',compact('properties','relatedProperties'));
     }

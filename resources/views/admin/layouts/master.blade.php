@@ -31,259 +31,303 @@
 
 
 
+        <ul class="side-nav">
+            <div class="leftside-menu">
 
 
+                <!-- LOGO -->
 
 
+                @if(!empty(getSettingsData('logo')['logo']))
 
 
-        <div class="leftside-menu">
-
-            <!-- LOGO -->
-            <a href="index-2.html" class="logo text-center logo-light">
+                    <a href="" class="logo text-center logo-light">
                 <span class="logo-lg">
-                    <img src="assets/images/logo.png" alt="" height="16">
+                   <img src="{{asset('/storage/logo/'.getSettingsData('logo')['logo'])}}" alt="" height="80">
                 </span>
-                <span class="logo-sm">
+                    </a>
+{{--                    <div>--}}
+{{--                        <img src="{{asset('/storage/logo/'.getSettingsData('logo')['logo'])}}" alt="" height="80">--}}
+{{--                    </div>--}}
+
+                @else
+                    <a href="" class="logo text-center logo-light">
+                <span class="logo-lg">
+                    <img src="{{asset('assets/images/logo.png')}}" alt="" height="16">
+                </span>
+                        <span class="logo-sm">
                     <img src="assets/images/logo_sm.png" alt="" height="16">
                 </span>
-            </a>
+                    </a>
+                @endif
 
-            <!-- LOGO -->
-            <a href="index-2.html" class="logo text-center logo-dark">
-                <span class="logo-lg">
-                    <img src="assets/images/logo-dark.png" alt="" height="16">
-                </span>
-                <span class="logo-sm">
-                    <img src="assets/images/logo_sm_dark.png" alt="" height="16">
-                </span>
-            </a>
+                <div class="h-100" id="leftside-menu-container" data-simplebar>
 
-            <div class="h-100" id="leftside-menu-container" data-simplebar>
+                    <!--- Sidemenu -->
+                    <ul class="side-nav">
 
-                <!--- Sidemenu -->
-                <ul class="side-nav">
 
-                    <li class="side-nav-title side-nav-item">Dashboard</li>
+{{--                        <li class="side-nav-title side-nav-item"></li>--}}
 
-                    <li class="side-nav-item">
-                        <a href="{{ route('admin.dashboard') }}" class="nav-link">
-
-                    </li>
-
-                    <li class="side-nav-item">
                         <li class="side-nav-item">
-                            <a data-bs-toggle="collapse" href="#adminBlog" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
-                                <i class="uil-store"></i>
-                                <span> Blog Section </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="adminBlog">
-                                <ul class="side-nav-second-level">
-                                    <li>
-                                        <a href="{{ route('post.list.all') }}">All Blogs</a>
-                                    </li>
+{{--                            <a href="{{ route('admin.dashboard') }}" class="nav-link">Dashboard</a>--}}
+                        <li class="side-nav-title side-nav-item">DASHBOARD</li>
 
-                                    <li>
-                                        <a href="{{ route('admin.add.newblog') }}">Add New Blog</a>
-                                    </li>
-                                </ul>
-                            </div>
                         </li>
 
+
+
+                    {{--                BLOG AREA--}}
+
+
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#adminBlog" aria-expanded="false" aria-controls="adminBlog" class="side-nav-link">
+                            <i class="uil-store"></i>
+                            <span> Blog Section </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="adminBlog">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="{{ route('post.list.all') }}">All Blogs</a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('admin.add.newblog') }}">Add New Blog</a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
+
+
 
 
                     {{-- PROPERTY SECTION --}}
 
+
                     <li class="side-nav-item">
-                        <li class="side-nav-item">
-                            <a data-bs-toggle="collapse" href="#adminProperty" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
-                                <i class="uil-store"></i>
-                                <span> Property Section </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="adminProperty">
-                                <ul class="side-nav-second-level">
-                                    <li>
-                                        <a href="{{ route('property.list') }}">All Properties</a>
-                                    </li>
+                        <a data-bs-toggle="collapse" href="#adminProperty" aria-expanded="false" aria-controls="adminProperty" class="side-nav-link">
+                            <i class="uil-store"></i>
+                            <span> Property Section </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="adminProperty">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="{{ route('property.list') }}">All Properties</a>
+                                </li>
 
-                                    <li>
-                                        <a href="{{ route('property.view') }}">Add New Property</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
+                                <li>
+                                    <a href="{{ route('property.view') }}">Add New Property</a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
+
+
 
                     {{-- CATEGORY SECTION --}}
 
+
                     <li class="side-nav-item">
-                        <li class="side-nav-item">
-                            <a data-bs-toggle="collapse" href="#adminCategory" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
-                                <i class="uil-store"></i>
-                                <span> Category Section </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="adminCategory">
-                                <ul class="side-nav-second-level">
-                                    <li>
-                                        <a href="{{ route('category.list') }}">All Categories</a>
-                                    </li>
+                        <a data-bs-toggle="collapse" href="#adminCategory" aria-expanded="false" aria-controls="adminCategory" class="side-nav-link">
+                            <i class="uil-store"></i>
+                            <span> Category Section </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="adminCategory">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="{{ route('category.list') }}">All Categories</a>
+                                </li>
 
-                                    <li>
-                                        <a href="{{ route('category.view') }}">Add New Category</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
+                                <li>
+                                    <a href="{{ route('category.view') }}">Add New Category</a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
+
+
+
+                    {{-- SERVICES SECTION --}}
+
+
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#adminService" aria-expanded="false" aria-controls="adminService" class="side-nav-link">
+                            <i class="uil-store"></i>
+                            <span> Service Section </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="adminService">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="{{ route('service.list') }}">All services</a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('service.view') }}">Add New Service</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+
+
+
 
                     {{-- SETTINGS SECTION --}}
 
 
+
                     <li class="side-nav-item">
-                        <li class="side-nav-item">
-                            <a data-bs-toggle="collapse" href="#adminSettings" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
-                                <i class="uil-store"></i>
-                                <span> Settings Section </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="adminSettings">
-                                <ul class="side-nav-second-level">
-                                    <li>
-                                        <a href="{{ route('settings.settingsView') }}">Settings View</a>
-                                    </li>
+                        <a data-bs-toggle="collapse" href="#adminSettings" aria-expanded="false" aria-controls="adminSettings" class="side-nav-link">
+                            <i class="uil-store"></i>
+                            <span> Settings Section </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="adminSettings">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="{{ route('settings.settingsView') }}">Settings View</a>
+                                </li>
 
-                                </ul>
-                            </div>
-                        </li>
+                            </ul>
+                        </div>
+                    </li>
 
-                        {{-- AGENT'S SECTION --}}
-
-                        <li class="side-nav-item">
-                            <li class="side-nav-item">
-                                <a data-bs-toggle="collapse" href="#adminAgents" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
-                                    <i class="uil-store"></i>
-                                    <span> Agents Section </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="adminAgents">
-                                    <ul class="side-nav-second-level">
-                                        <li>
-                                            <a href="{{ route('agent.list') }}">All Agents</a>
-                                        </li>
-
-                                        <li>
-                                            <a href="{{ route('agent.view') }}">Add New Agent</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-
-                        </li>
-
-                           {{-- testimonial section --}}
-
-                           <li class="side-nav-item">
-                            <li class="side-nav-item">
-                                <a data-bs-toggle="collapse" href="#adminTestimonials" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
-                                    <i class="uil-store"></i>
-                                    <span> Testimonials Section </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="adminTestimonials">
-                                    <ul class="side-nav-second-level">
-                                        <li>
-                                            <a href="{{ route('testimonial.list') }}">All Testimonials</a>
-                                        </li>
-
-                                        <li>
-                                            <a href="{{ route('testimonial.view') }}">Add New Testimonials</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-
-                        </li>
-
-                        {{-- FAQ SECTION --}}
-                        <li class="side-nav-item">
-                            <li class="side-nav-item">
-                                <a data-bs-toggle="collapse" href="#adminFAQ" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
-                                    <i class="uil-store"></i>
-                                    <span> FAQ Section </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="adminFAQ">
-                                    <ul class="side-nav-second-level">
-                                        <li>
-                                            <a href="{{ route('faq.view') }}">FAQ View</a>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            </li>
-
-                        </li>
-
-                        {{-- PARTNERS SECTION --}}
-
-                        <li class="side-nav-item">
-                            <li class="side-nav-item">
-                                <a data-bs-toggle="collapse" href="#adminPartners" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
-                                    <i class="uil-store"></i>
-                                    <span> Partners Section </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="adminPartners">
-                                    <ul class="side-nav-second-level">
-                                        <li>
-                                            <a href="{{ route('partners.list') }}">All Partners</a>
-                                        </li>
-
-                                        <li>
-                                            <a href="{{ route('partners.view') }}">Add New Partner</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-
-                        </li>
-
-                        {{-- Contact section --}}
+                    {{-- AGENT'S SECTION --}}
 
 
-                        <li class="side-nav-item">
-                            <li class="side-nav-item">
-                                <a data-bs-toggle="collapse" href="#adminContact" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
-                                    <i class="uil-store"></i>
-                                    <span> Contact </span>
-                                    <span class="menu-arrow"></span>
-                                </a>
-                                <div class="collapse" id="adminContact">
-                                    <ul class="side-nav-second-level">
-                                        <li>
-                                            <a href="{{ route('contact.list') }}">Contact Us</a>
-                                        </li>
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#adminAgents" aria-expanded="false" aria-controls="adminAgents" class="side-nav-link">
+                            <i class="uil-store"></i>
+                            <span> Agents Section </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="adminAgents">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="{{ route('agent.list') }}">All Agents</a>
+                                </li>
 
-                                    </ul>
-                                </div>
-                            </li>
+                                <li>
+                                    <a href="{{ route('agent.view') }}">Add New Agent</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
 
-                        </li>
-                <!-- end Help Box -->
-                <!-- End Sidebar -->
 
-                <div class="clearfix"></div>
+
+                    {{-- testimonial section --}}
+
+
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#adminTestimonials" aria-expanded="false" aria-controls="adminFAQ" class="side-nav-link">
+                            <i class="uil-store"></i>
+                            <span> Testimonials Section </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="adminTestimonials">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="{{ route('testimonial.list') }}">All Testimonials</a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('testimonial.view') }}">Add New Testimonials</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+
+
+                    {{-- FAQ SECTION --}}
+
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#adminFAQ" aria-expanded="false" aria-controls="adminFAQ" class="side-nav-link">
+                            <i class="uil-store"></i>
+                            <span> FAQ Section </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="adminFAQ">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="{{ route('faq.view') }}">FAQ View</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+
+                    {{-- PARTNERS SECTION --}}
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#adminPartners" aria-expanded="false" aria-controls="adminPartners" class="side-nav-link">
+                            <i class="uil-store"></i>
+                            <span> Partners Section </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="adminPartners">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="{{ route('partners.list') }}">All Partners</a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ route('partners.view') }}">Add New Partner</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+
+
+                    {{-- Contact section --}}
+
+
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#adminContact" aria-expanded="false" aria-controls="adminContact" class="side-nav-link">
+                            <i class="uil-store"></i>
+                            <span> Contact </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="adminContact">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="{{ route('contact.list') }}">Contact Us</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+
+
+                    <!-- end Help Box -->
+                    <!-- End Sidebar -->
+
+                    <div class="clearfix"></div>
+                    </ul>
+
+                </div>
+                <!-- Sidebar -left -->
 
             </div>
-            <!-- Sidebar -left -->
 
-        </div>
+        </ul>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -318,252 +362,252 @@
                                 </form>
                             </div>
                         </li>
-                        <li class="dropdown notification-list topbar-dropdown">
-                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#"
-                                role="button" aria-haspopup="false" aria-expanded="false">
-                                <img src="{{ asset('assets') }}/images/flags/us.jpg" alt="user-image"
-                                    class="me-0 me-sm-1" height="12">
-                                <span class="align-middle d-none d-sm-inline-block">English</span> <i
-                                    class="mdi mdi-chevron-down d-none d-sm-inline-block align-middle"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu">
+{{--                        <li class="dropdown notification-list topbar-dropdown">--}}
+{{--                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#"--}}
+{{--                                role="button" aria-haspopup="false" aria-expanded="false">--}}
+{{--                                <img src="{{ asset('assets') }}/images/flags/us.jpg" alt="user-image"--}}
+{{--                                    class="me-0 me-sm-1" height="12">--}}
+{{--                                <span class="align-middle d-none d-sm-inline-block">English</span> <i--}}
+{{--                                    class="mdi mdi-chevron-down d-none d-sm-inline-block align-middle"></i>--}}
+{{--                            </a>--}}
+{{--                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu">--}}
 
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="{{ asset('assets') }}/images/flags/germany.jpg" alt="user-image"
-                                        class="me-1" height="12"> <span class="align-middle">German</span>
-                                </a>
+{{--                                <!-- item-->--}}
+{{--                                <a href="javascript:void(0);" class="dropdown-item notify-item">--}}
+{{--                                    <img src="{{ asset('assets') }}/images/flags/germany.jpg" alt="user-image"--}}
+{{--                                        class="me-1" height="12"> <span class="align-middle">German</span>--}}
+{{--                                </a>--}}
 
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/italy.jpg" alt="user-image" class="me-1"
-                                        height="12"> <span class="align-middle">Italian</span>
-                                </a>
+{{--                                <!-- item-->--}}
+{{--                                <a href="javascript:void(0);" class="dropdown-item notify-item">--}}
+{{--                                    <img src="assets/images/flags/italy.jpg" alt="user-image" class="me-1"--}}
+{{--                                        height="12"> <span class="align-middle">Italian</span>--}}
+{{--                                </a>--}}
 
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/spain.jpg" alt="user-image" class="me-1"
-                                        height="12"> <span class="align-middle">Spanish</span>
-                                </a>
+{{--                                <!-- item-->--}}
+{{--                                <a href="javascript:void(0);" class="dropdown-item notify-item">--}}
+{{--                                    <img src="assets/images/flags/spain.jpg" alt="user-image" class="me-1"--}}
+{{--                                        height="12"> <span class="align-middle">Spanish</span>--}}
+{{--                                </a>--}}
 
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/russia.jpg" alt="user-image" class="me-1"
-                                        height="12"> <span class="align-middle">Russian</span>
-                                </a>
+{{--                                <!-- item-->--}}
+{{--                                <a href="javascript:void(0);" class="dropdown-item notify-item">--}}
+{{--                                    <img src="assets/images/flags/russia.jpg" alt="user-image" class="me-1"--}}
+{{--                                        height="12"> <span class="align-middle">Russian</span>--}}
+{{--                                </a>--}}
 
-                            </div>
-                        </li>
+{{--                            </div>--}}
+{{--                        </li>--}}
 
-                        <li class="dropdown notification-list">
-                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#"
-                                role="button" aria-haspopup="false" aria-expanded="false">
-                                <i class="dripicons-bell noti-icon"></i>
-                                <span class="noti-icon-badge"></span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg">
+{{--                        <li class="dropdown notification-list">--}}
+{{--                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#"--}}
+{{--                                role="button" aria-haspopup="false" aria-expanded="false">--}}
+{{--                                <i class="dripicons-bell noti-icon"></i>--}}
+{{--                                <span class="noti-icon-badge"></span>--}}
+{{--                            </a>--}}
+{{--                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg">--}}
 
-                                <!-- item-->
-                                <div class="dropdown-item noti-title px-3">
-                                    <h5 class="m-0">
-                                        <span class="float-end">
-                                            <a href="javascript: void(0);" class="text-dark">
-                                                <small>Clear All</small>
-                                            </a>
-                                        </span>Notification
-                                    </h5>
-                                </div>
+{{--                                <!-- item-->--}}
+{{--                                <div class="dropdown-item noti-title px-3">--}}
+{{--                                    <h5 class="m-0">--}}
+{{--                                        <span class="float-end">--}}
+{{--                                            <a href="javascript: void(0);" class="text-dark">--}}
+{{--                                                <small>Clear All</small>--}}
+{{--                                            </a>--}}
+{{--                                        </span>Notification--}}
+{{--                                    </h5>--}}
+{{--                                </div>--}}
 
-                                <div class="px-3" style="max-height: 300px;" data-simplebar>
+{{--                                <div class="px-3" style="max-height: 300px;" data-simplebar>--}}
 
-                                    <h5 class="text-muted font-13 fw-normal mt-0">Today</h5>
-                                    <!-- item-->
-                                    <a href="javascript:void(0);"
-                                        class="dropdown-item p-0 notify-item card unread-noti shadow-none mb-2">
-                                        <div class="card-body">
-                                            <span class="float-end noti-close-btn text-muted"><i
-                                                    class="mdi mdi-close"></i></span>
-                                            <div class="d-flex align-items-center">
-                                                <div class="flex-shrink-0">
-                                                    <div class="notify-icon bg-primary">
-                                                        <i class="mdi mdi-comment-account-outline"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1 text-truncate ms-2">
-                                                    <h5 class="noti-item-title fw-semibold font-14">Datacorp <small
-                                                            class="fw-normal text-muted ms-1">1 min ago</small></h5>
-                                                    <small class="noti-item-subtitle text-muted">Caleb Flakelar
-                                                        commented on Admin</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
+{{--                                    <h5 class="text-muted font-13 fw-normal mt-0">Today</h5>--}}
+{{--                                    <!-- item-->--}}
+{{--                                    <a href="javascript:void(0);"--}}
+{{--                                        class="dropdown-item p-0 notify-item card unread-noti shadow-none mb-2">--}}
+{{--                                        <div class="card-body">--}}
+{{--                                            <span class="float-end noti-close-btn text-muted"><i--}}
+{{--                                                    class="mdi mdi-close"></i></span>--}}
+{{--                                            <div class="d-flex align-items-center">--}}
+{{--                                                <div class="flex-shrink-0">--}}
+{{--                                                    <div class="notify-icon bg-primary">--}}
+{{--                                                        <i class="mdi mdi-comment-account-outline"></i>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="flex-grow-1 text-truncate ms-2">--}}
+{{--                                                    <h5 class="noti-item-title fw-semibold font-14">Datacorp <small--}}
+{{--                                                            class="fw-normal text-muted ms-1">1 min ago</small></h5>--}}
+{{--                                                    <small class="noti-item-subtitle text-muted">Caleb Flakelar--}}
+{{--                                                        commented on Admin</small>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </a>--}}
 
-                                    <!-- item-->
-                                    <a href="javascript:void(0);"
-                                        class="dropdown-item p-0 notify-item card read-noti shadow-none mb-2">
-                                        <div class="card-body">
-                                            <span class="float-end noti-close-btn text-muted"><i
-                                                    class="mdi mdi-close"></i></span>
-                                            <div class="d-flex align-items-center">
-                                                <div class="flex-shrink-0">
-                                                    <div class="notify-icon bg-info">
-                                                        <i class="mdi mdi-account-plus"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1 text-truncate ms-2">
-                                                    <h5 class="noti-item-title fw-semibold font-14">Admin <small
-                                                            class="fw-normal text-muted ms-1">1 hours ago</small></h5>
-                                                    <small class="noti-item-subtitle text-muted">New user
-                                                        registered</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
+{{--                                    <!-- item-->--}}
+{{--                                    <a href="javascript:void(0);"--}}
+{{--                                        class="dropdown-item p-0 notify-item card read-noti shadow-none mb-2">--}}
+{{--                                        <div class="card-body">--}}
+{{--                                            <span class="float-end noti-close-btn text-muted"><i--}}
+{{--                                                    class="mdi mdi-close"></i></span>--}}
+{{--                                            <div class="d-flex align-items-center">--}}
+{{--                                                <div class="flex-shrink-0">--}}
+{{--                                                    <div class="notify-icon bg-info">--}}
+{{--                                                        <i class="mdi mdi-account-plus"></i>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="flex-grow-1 text-truncate ms-2">--}}
+{{--                                                    <h5 class="noti-item-title fw-semibold font-14">Admin <small--}}
+{{--                                                            class="fw-normal text-muted ms-1">1 hours ago</small></h5>--}}
+{{--                                                    <small class="noti-item-subtitle text-muted">New user--}}
+{{--                                                        registered</small>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </a>--}}
 
-                                    <h5 class="text-muted font-13 fw-normal mt-0">Yesterday</h5>
+{{--                                    <h5 class="text-muted font-13 fw-normal mt-0">Yesterday</h5>--}}
 
-                                    <!-- item-->
-                                    <a href="javascript:void(0);"
-                                        class="dropdown-item p-0 notify-item card read-noti shadow-none mb-2">
-                                        <div class="card-body">
-                                            <span class="float-end noti-close-btn text-muted"><i
-                                                    class="mdi mdi-close"></i></span>
-                                            <div class="d-flex align-items-center">
-                                                <div class="flex-shrink-0">
-                                                    <div class="notify-icon">
-                                                        <img src="assets/images/users/avatar-2.jpg"
-                                                            class="img-fluid rounded-circle" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1 text-truncate ms-2">
-                                                    <h5 class="noti-item-title fw-semibold font-14">Cristina Pride
-                                                        <small class="fw-normal text-muted ms-1">1 day ago</small></h5>
-                                                    <small class="noti-item-subtitle text-muted">Hi, How are you? What
-                                                        about our next meeting</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
+{{--                                    <!-- item-->--}}
+{{--                                    <a href="javascript:void(0);"--}}
+{{--                                        class="dropdown-item p-0 notify-item card read-noti shadow-none mb-2">--}}
+{{--                                        <div class="card-body">--}}
+{{--                                            <span class="float-end noti-close-btn text-muted"><i--}}
+{{--                                                    class="mdi mdi-close"></i></span>--}}
+{{--                                            <div class="d-flex align-items-center">--}}
+{{--                                                <div class="flex-shrink-0">--}}
+{{--                                                    <div class="notify-icon">--}}
+{{--                                                        <img src="assets/images/users/avatar-2.jpg"--}}
+{{--                                                            class="img-fluid rounded-circle" alt="" />--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="flex-grow-1 text-truncate ms-2">--}}
+{{--                                                    <h5 class="noti-item-title fw-semibold font-14">Cristina Pride--}}
+{{--                                                        <small class="fw-normal text-muted ms-1">1 day ago</small></h5>--}}
+{{--                                                    <small class="noti-item-subtitle text-muted">Hi, How are you? What--}}
+{{--                                                        about our next meeting</small>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </a>--}}
 
-                                    <h5 class="text-muted font-13 fw-normal mt-0">30 Dec 2021</h5>
+{{--                                    <h5 class="text-muted font-13 fw-normal mt-0">30 Dec 2021</h5>--}}
 
-                                    <!-- item-->
-                                    <a href="javascript:void(0);"
-                                        class="dropdown-item p-0 notify-item card read-noti shadow-none mb-2">
-                                        <div class="card-body">
-                                            <span class="float-end noti-close-btn text-muted"><i
-                                                    class="mdi mdi-close"></i></span>
-                                            <div class="d-flex align-items-center">
-                                                <div class="flex-shrink-0">
-                                                    <div class="notify-icon bg-primary">
-                                                        <i class="mdi mdi-comment-account-outline"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1 text-truncate ms-2">
-                                                    <h5 class="noti-item-title fw-semibold font-14">Datacorp</h5>
-                                                    <small class="noti-item-subtitle text-muted">Caleb Flakelar
-                                                        commented on Admin</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
+{{--                                    <!-- item-->--}}
+{{--                                    <a href="javascript:void(0);"--}}
+{{--                                        class="dropdown-item p-0 notify-item card read-noti shadow-none mb-2">--}}
+{{--                                        <div class="card-body">--}}
+{{--                                            <span class="float-end noti-close-btn text-muted"><i--}}
+{{--                                                    class="mdi mdi-close"></i></span>--}}
+{{--                                            <div class="d-flex align-items-center">--}}
+{{--                                                <div class="flex-shrink-0">--}}
+{{--                                                    <div class="notify-icon bg-primary">--}}
+{{--                                                        <i class="mdi mdi-comment-account-outline"></i>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="flex-grow-1 text-truncate ms-2">--}}
+{{--                                                    <h5 class="noti-item-title fw-semibold font-14">Datacorp</h5>--}}
+{{--                                                    <small class="noti-item-subtitle text-muted">Caleb Flakelar--}}
+{{--                                                        commented on Admin</small>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </a>--}}
 
-                                    <!-- item-->
-                                    <a href="javascript:void(0);"
-                                        class="dropdown-item p-0 notify-item card read-noti shadow-none mb-2">
-                                        <div class="card-body">
-                                            <span class="float-end noti-close-btn text-muted"><i
-                                                    class="mdi mdi-close"></i></span>
-                                            <div class="d-flex align-items-center">
-                                                <div class="flex-shrink-0">
-                                                    <div class="notify-icon">
-                                                        <img src="assets/images/users/avatar-4.jpg"
-                                                            class="img-fluid rounded-circle" alt="" />
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1 text-truncate ms-2">
-                                                    <h5 class="noti-item-title fw-semibold font-14">Karen Robinson</h5>
-                                                    <small class="noti-item-subtitle text-muted">Wow ! this admin looks
-                                                        good and awesome design</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
+{{--                                    <!-- item-->--}}
+{{--                                    <a href="javascript:void(0);"--}}
+{{--                                        class="dropdown-item p-0 notify-item card read-noti shadow-none mb-2">--}}
+{{--                                        <div class="card-body">--}}
+{{--                                            <span class="float-end noti-close-btn text-muted"><i--}}
+{{--                                                    class="mdi mdi-close"></i></span>--}}
+{{--                                            <div class="d-flex align-items-center">--}}
+{{--                                                <div class="flex-shrink-0">--}}
+{{--                                                    <div class="notify-icon">--}}
+{{--                                                        <img src="assets/images/users/avatar-4.jpg"--}}
+{{--                                                            class="img-fluid rounded-circle" alt="" />--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="flex-grow-1 text-truncate ms-2">--}}
+{{--                                                    <h5 class="noti-item-title fw-semibold font-14">Karen Robinson</h5>--}}
+{{--                                                    <small class="noti-item-subtitle text-muted">Wow ! this admin looks--}}
+{{--                                                        good and awesome design</small>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </a>--}}
 
-                                    <div class="text-center">
-                                        <i class="mdi mdi-dots-circle mdi-spin text-muted h3 mt-0"></i>
-                                    </div>
-                                </div>
+{{--                                    <div class="text-center">--}}
+{{--                                        <i class="mdi mdi-dots-circle mdi-spin text-muted h3 mt-0"></i>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
 
-                                <!-- All-->
-                                <a href="javascript:void(0);"
-                                    class="dropdown-item text-center text-primary notify-item border-top border-light py-2">
-                                    View All
-                                </a>
+{{--                                <!-- All-->--}}
+{{--                                <a href="javascript:void(0);"--}}
+{{--                                    class="dropdown-item text-center text-primary notify-item border-top border-light py-2">--}}
+{{--                                    View All--}}
+{{--                                </a>--}}
 
-                            </div>
-                        </li>
+{{--                            </div>--}}
+{{--                        </li>--}}
 
-                        <li class="dropdown notification-list d-none d-sm-inline-block">
-                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#"
-                                role="button" aria-haspopup="false" aria-expanded="false">
-                                <i class="dripicons-view-apps noti-icon"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg p-0">
+{{--                        <li class="dropdown notification-list d-none d-sm-inline-block">--}}
+{{--                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#"--}}
+{{--                                role="button" aria-haspopup="false" aria-expanded="false">--}}
+{{--                                <i class="dripicons-view-apps noti-icon"></i>--}}
+{{--                            </a>--}}
+{{--                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg p-0">--}}
 
-                                <div class="p-2">
-                                    <div class="row g-0">
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/slack.png" alt="slack">
-                                                <span>Slack</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/github.png" alt="Github">
-                                                <span>GitHub</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/dribbble.png" alt="dribbble">
-                                                <span>Dribbble</span>
-                                            </a>
-                                        </div>
-                                    </div>
+{{--                                <div class="p-2">--}}
+{{--                                    <div class="row g-0">--}}
+{{--                                        <div class="col">--}}
+{{--                                            <a class="dropdown-icon-item" href="#">--}}
+{{--                                                <img src="assets/images/brands/slack.png" alt="slack">--}}
+{{--                                                <span>Slack</span>--}}
+{{--                                            </a>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="col">--}}
+{{--                                            <a class="dropdown-icon-item" href="#">--}}
+{{--                                                <img src="assets/images/brands/github.png" alt="Github">--}}
+{{--                                                <span>GitHub</span>--}}
+{{--                                            </a>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="col">--}}
+{{--                                            <a class="dropdown-icon-item" href="#">--}}
+{{--                                                <img src="assets/images/brands/dribbble.png" alt="dribbble">--}}
+{{--                                                <span>Dribbble</span>--}}
+{{--                                            </a>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
 
-                                    <div class="row g-0">
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/bitbucket.png" alt="bitbucket">
-                                                <span>Bitbucket</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/dropbox.png" alt="dropbox">
-                                                <span>Dropbox</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/g-suite.png" alt="G Suite">
-                                                <span>G Suite</span>
-                                            </a>
-                                        </div>
-                                    </div> <!-- end row-->
-                                </div>
+{{--                                    <div class="row g-0">--}}
+{{--                                        <div class="col">--}}
+{{--                                            <a class="dropdown-icon-item" href="#">--}}
+{{--                                                <img src="assets/images/brands/bitbucket.png" alt="bitbucket">--}}
+{{--                                                <span>Bitbucket</span>--}}
+{{--                                            </a>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="col">--}}
+{{--                                            <a class="dropdown-icon-item" href="#">--}}
+{{--                                                <img src="assets/images/brands/dropbox.png" alt="dropbox">--}}
+{{--                                                <span>Dropbox</span>--}}
+{{--                                            </a>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="col">--}}
+{{--                                            <a class="dropdown-icon-item" href="#">--}}
+{{--                                                <img src="assets/images/brands/g-suite.png" alt="G Suite">--}}
+{{--                                                <span>G Suite</span>--}}
+{{--                                            </a>--}}
+{{--                                        </div>--}}
+{{--                                    </div> <!-- end row-->--}}
+{{--                                </div>--}}
 
-                            </div>
-                        </li>
+{{--                            </div>--}}
+{{--                        </li>--}}
 
-                        <li class="notification-list">
-                            <a class="nav-link end-bar-toggle" href="javascript: void(0);">
-                                <i class="dripicons-gear noti-icon"></i>
-                            </a>
-                        </li>
+{{--                        <li class="notification-list">--}}
+{{--                            <a class="nav-link end-bar-toggle" href="javascript: void(0);">--}}
+{{--                                <i class="dripicons-gear noti-icon"></i>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
 
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown"
@@ -585,28 +629,28 @@
                                 </div>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-account-circle me-1"></i>
-                                    <span>My Account</span>
-                                </a>
+{{--                                <a href="javascript:void(0);" class="dropdown-item notify-item">--}}
+{{--                                    <i class="mdi mdi-account-circle me-1"></i>--}}
+{{--                                    <span>My Account</span>--}}
+{{--                                </a>--}}
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-account-edit me-1"></i>
-                                    <span>Settings</span>
-                                </a>
+{{--                                <a href="javascript:void(0);" class="dropdown-item notify-item">--}}
+{{--                                    <i class="mdi mdi-account-edit me-1"></i>--}}
+{{--                                    <span>Settings</span>--}}
+{{--                                </a>--}}
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-lifebuoy me-1"></i>
-                                    <span>Support</span>
-                                </a>
+{{--                                <a href="javascript:void(0);" class="dropdown-item notify-item">--}}
+{{--                                    <i class="mdi mdi-lifebuoy me-1"></i>--}}
+{{--                                    <span>Support</span>--}}
+{{--                                </a>--}}
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-lock-outline me-1"></i>
-                                    <span>Lock Screen</span>
-                                </a>
+{{--                                <a href="javascript:void(0);" class="dropdown-item notify-item">--}}
+{{--                                    <i class="mdi mdi-lock-outline me-1"></i>--}}
+{{--                                    <span>Lock Screen</span>--}}
+{{--                                </a>--}}
 
                                 <!-- item-->
                                 <a href="{{ route('logout') }}" class="dropdown-item notify-item">
@@ -620,72 +664,72 @@
                     <button class="button-menu-mobile open-left">
                         <i class="mdi mdi-menu"></i>
                     </button>
-                    <div class="app-search dropdown d-none d-lg-block">
-                        <form>
-                            <div class="input-group">
-                                <input type="text" class="form-control dropdown-toggle" placeholder="Search..."
-                                    id="top-search">
-                                <span class="mdi mdi-magnify search-icon"></span>
-                                <button class="input-group-text btn-primary" type="submit">Search</button>
-                            </div>
-                        </form>
+{{--                    <div class="app-search dropdown d-none d-lg-block">--}}
+{{--                        <form>--}}
+{{--                            <div class="input-group">--}}
+{{--                                <input type="text" class="form-control dropdown-toggle" placeholder="Search..."--}}
+{{--                                    id="top-search">--}}
+{{--                                <span class="mdi mdi-magnify search-icon"></span>--}}
+{{--                                <button class="input-group-text btn-primary" type="submit">Search</button>--}}
+{{--                            </div>--}}
+{{--                        </form>--}}
 
-                        <div class="dropdown-menu dropdown-menu-animated dropdown-lg" id="search-dropdown">
-                            <!-- item-->
-                            <div class="dropdown-header noti-title">
-                                <h5 class="text-overflow mb-2">Found <span class="text-danger">17</span> results</h5>
-                            </div>
+{{--                        <div class="dropdown-menu dropdown-menu-animated dropdown-lg" id="search-dropdown">--}}
+{{--                            <!-- item-->--}}
+{{--                            <div class="dropdown-header noti-title">--}}
+{{--                                <h5 class="text-overflow mb-2">Found <span class="text-danger">17</span> results</h5>--}}
+{{--                            </div>--}}
 
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="uil-notes font-16 me-1"></i>
-                                <span>Analytics Report</span>
-                            </a>
+{{--                            <!-- item-->--}}
+{{--                            <a href="javascript:void(0);" class="dropdown-item notify-item">--}}
+{{--                                <i class="uil-notes font-16 me-1"></i>--}}
+{{--                                <span>Analytics Report</span>--}}
+{{--                            </a>--}}
 
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="uil-life-ring font-16 me-1"></i>
-                                <span>How can I help you?</span>
-                            </a>
+{{--                            <!-- item-->--}}
+{{--                            <a href="javascript:void(0);" class="dropdown-item notify-item">--}}
+{{--                                <i class="uil-life-ring font-16 me-1"></i>--}}
+{{--                                <span>How can I help you?</span>--}}
+{{--                            </a>--}}
 
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="uil-cog font-16 me-1"></i>
-                                <span>User profile settings</span>
-                            </a>
+{{--                            <!-- item-->--}}
+{{--                            <a href="javascript:void(0);" class="dropdown-item notify-item">--}}
+{{--                                <i class="uil-cog font-16 me-1"></i>--}}
+{{--                                <span>User profile settings</span>--}}
+{{--                            </a>--}}
 
-                            <!-- item-->
-                            <div class="dropdown-header noti-title">
-                                <h6 class="text-overflow mb-2 text-uppercase">Users</h6>
-                            </div>
+{{--                            <!-- item-->--}}
+{{--                            <div class="dropdown-header noti-title">--}}
+{{--                                <h6 class="text-overflow mb-2 text-uppercase">Users</h6>--}}
+{{--                            </div>--}}
 
-                            <div class="notification-list">
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="d-flex">
-                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-2.jpg"
-                                            alt="Generic placeholder image" height="32">
-                                        <div class="w-100">
-                                            <h5 class="m-0 font-14">Erwin Brown</h5>
-                                            <span class="font-12 mb-0">UI Designer</span>
-                                        </div>
-                                    </div>
-                                </a>
+{{--                            <div class="notification-list">--}}
+{{--                                <!-- item-->--}}
+{{--                                <a href="javascript:void(0);" class="dropdown-item notify-item">--}}
+{{--                                    <div class="d-flex">--}}
+{{--                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-2.jpg"--}}
+{{--                                            alt="Generic placeholder image" height="32">--}}
+{{--                                        <div class="w-100">--}}
+{{--                                            <h5 class="m-0 font-14">Erwin Brown</h5>--}}
+{{--                                            <span class="font-12 mb-0">UI Designer</span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </a>--}}
 
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="d-flex">
-                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-5.jpg"
-                                            alt="Generic placeholder image" height="32">
-                                        <div class="w-100">
-                                            <h5 class="m-0 font-14">Jacob Deo</h5>
-                                            <span class="font-12 mb-0">Developer</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+{{--                                <!-- item-->--}}
+{{--                                <a href="javascript:void(0);" class="dropdown-item notify-item">--}}
+{{--                                    <div class="d-flex">--}}
+{{--                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-5.jpg"--}}
+{{--                                            alt="Generic placeholder image" height="32">--}}
+{{--                                        <div class="w-100">--}}
+{{--                                            <h5 class="m-0 font-14">Jacob Deo</h5>--}}
+{{--                                            <span class="font-12 mb-0">Developer</span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
                 <!-- end Topbar -->
 

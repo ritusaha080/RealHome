@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <ul class="camp-link">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="{{route('homepage.get')}}">Home</a></li>
                 <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
                 <li>Object</li>
             </ul>
@@ -23,6 +23,7 @@
                             <img src="{{asset('frontend')}}/images/blog/03.jpg" alt="">
                     </div>
                 </div>
+
                 <div class="related-post-wrap">
                     <div class="section-title section-title-2">
                         <h3>Related <span>Posts</span></h3>
@@ -40,8 +41,11 @@
                         </div>
                         @endforeach
 
-
                     </div>
+
+
+
+
                     <form action="#" class="coment-form">
                         <h5 class="comnt-input-title">No Comments Yet</h5>
                         <input class="input-feild" type="text" placeholder="Your name">
@@ -53,6 +57,7 @@
                         </div>
                     </form>
                 </div>
+
             </div>
             <div class="col-lg-4 col-md-4 col-12">
                 <div class="object-category">

@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 @section('admin.content')
- 
+
  <div class="container float-right">
   <div class="card">
       <div class="card-header">
@@ -15,7 +15,7 @@
         @endif
 
 
-        
+
 <form action="{{route('admin.blog.post')}}" method="post" enctype="multipart/form-data">
   @method('POST')
   @csrf
@@ -44,24 +44,15 @@
         <div class="custom-file">
           <input type="file" name="image" class="form-control" id="exampleInputFile">
         </div>
-       
-        {{-- <div class="input-group-append">
-          <span class="input-group-text">Upload</span>
-        </div> --}}
       </div>
+    </div>
       @error('image')
       <span class="text-danger">{{$message}}</span>
-    @enderror
-    </div>
-    <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-  </div>
+      @enderror
   <!-- /.card-body -->
 
   <div class="card-footer">
     <button type="submit" class="btn btn-primary">Submit</button>
   </div>
 </form>
-  @endsection 
+  @endsection

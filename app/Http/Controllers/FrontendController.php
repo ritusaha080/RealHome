@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 use App\Models\blog;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FrontendController extends Controller
 {
     public function show()
     {
-        $blogs=blog::all();
+        $blogs=blog::paginate(2);
         return view('frontend.blog.bloglist',compact('blogs'));
     }
     public function blog($id){
@@ -26,7 +27,8 @@ class FrontendController extends Controller
     {
         //dd($id);
         $blogs=blog::find($id);
+        $contact_us= DB::table('contact_us')->latest()->get();
         //dd($blogs);
-        return view('frontend.blog.blogdetails',compact('blogs'));
+        return view('frontend.blog.blogdetails',compact('blogs','contact_us'));
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Category;
-use Illuminate\Http\Request;
+use App\Http\Requests\CategoryRequest as RequestsPostRequest;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -12,9 +12,9 @@ class CategoryController extends Controller
     public function category(){
         return view('admin.category.category');
     }
-    public function PostCategory(Request $request){
+    public function PostCategory(RequestsPostRequest $request){
        //dd($request->all());
-        
+
         $categories = Category::create([
             'category_name'=>$request->get('category_name')
         ]);

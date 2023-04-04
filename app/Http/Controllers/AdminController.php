@@ -11,13 +11,14 @@ class AdminController extends Controller
      */
     public function dashboard()
     {
+
         return view('admin.layouts.master');
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    
+
 
 
     /**
@@ -36,5 +37,5 @@ class AdminController extends Controller
         //
     }
 
-    
+
 }

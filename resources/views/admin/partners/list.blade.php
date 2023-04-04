@@ -22,7 +22,7 @@
 
                 </div>
             @endif
-            
+
         </div>
         <div class="col">
 
@@ -31,11 +31,7 @@
 
 
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ asset('assets') }}/plugins/fontawesome-free/css/all.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset('assets') }}//dist/css/adminlte.min.css">
+
 
     <!-- /.row -->
     <div class="container float-right">
@@ -56,7 +52,7 @@
                                 <th>name</th>
                                 <th>logo</th>
                                 <th>links</th>
-                                
+
                             </tr>
                         </thead>
                         <tbody>
@@ -67,24 +63,17 @@
                                     <td>
                                         <img src="{{ asset('storage/post-image/' . $partner->logo) }}" alt=""
                                             style="height:100px;width:auto;">
-                                    
+
                                     </td>
                                     <td>{{ $partner->links}}</td>
-                                    
+
 
                                 </tr>
                                 @endforeach
                         </tbody>
+                    </table>
 
-                                <!-- jQuery -->
-                                <script src="{{ asset('assets') }}/plugins/jquery/jquery.min.js"></script>
-                                <!-- Bootstrap 4 -->
-                                <script src="{{ asset('assets') }}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-                                <!-- AdminLTE App -->
-                                <script src="{{ asset('assets') }}/dist/js/adminlte.min.js"></script>
-                                <!-- AdminLTE for demo purposes -->
-                                {{-- <script src="{{asset('assets')}}/dist/js/demo.js"></script> --}}
-                                </body>
 
-                                </html>
+
+
                             @endsection

@@ -86,6 +86,31 @@
     }
 }
 
+// hyper pagination edit 
+.pagination-wrapper {
+    .pagination {
+        display: flex;
+        padding-top: 30px;
+        align-items: center;
+        margin-bottom: 30px;
+        .page-item {
+            .page-link {
+                color: $theme-font;
+            }
+        }
+        .page-item.active {
+            .page-link {
+            color: $white;
+            background: $theme-color;
+            border-color: $theme-color;
+        }
+    }
+    }
+}
+
+
+
+
 .category-wrap {
     margin-bottom: 40px;
     .category-title {
